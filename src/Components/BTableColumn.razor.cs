@@ -49,7 +49,10 @@ namespace Element
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            Columns.AddColumn(this);
+            if (Columns.Table.Headers.All(o => o.Text != this.Text))
+            {
+                Columns.AddColumn(this);
+            }
         }
     }
 }
