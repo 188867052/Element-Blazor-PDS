@@ -19,7 +19,7 @@ namespace Admin.ServerRender
             });
             Menus.Add(new MenuModel()
             {
-                Label = "问题数据库",
+                Label = "文档管理",
                 Icon = "el-icon-document",
                 Children = new List<MenuModel>()
                 {
