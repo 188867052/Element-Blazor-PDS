@@ -1,12 +1,9 @@
-﻿using Element.Admin.ServerRender;
+﻿using Element.Admin;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Element.Admin.Sample.ServerRender
+namespace Admin.ServerRender
 {
     public class DocsDbContext : IdentityDbContext<IdentityUser>
     {

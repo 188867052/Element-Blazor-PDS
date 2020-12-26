@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
+﻿using Element.Admin;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Element.Admin.Sample.ServerRender
+namespace Admin.ServerRender
 {
     public class MainLayoutBase : LayoutComponentBase
     {
