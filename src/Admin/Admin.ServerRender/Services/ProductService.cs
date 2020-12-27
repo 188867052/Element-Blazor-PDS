@@ -47,13 +47,11 @@ namespace Element.Admin.ServerRender
         public async Task UpdateAsync(ProductModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Product>().Update(new Product
-            {
-                Id = model.Id,
-                Name = model.Name,
-                Description = model.Description,
-                UpdateTime = DateTime.Now,
-            });
+            var entity = dbContext.Set<Product>().Find(model.Id);
+            entity.UpdateTime = DateTime.Now;
+            entity.Name = model.Name;
+            entity.Description = model.Description;
+            dbContext.Set<Product>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

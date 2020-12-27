@@ -7,7 +7,8 @@ namespace Element.Admin
 {
     public class RouteService
     {
-        private Dictionary<string, Type> routeMap = new Dictionary<string, Type>();
+        private readonly Dictionary<string, Type> routeMap = new Dictionary<string, Type>();
+
         public RouteService()
         {
             var pageTypes = AppDomain.CurrentDomain.GetAssemblies()
@@ -27,6 +28,7 @@ namespace Element.Admin
                 }
             }
         }
+
         internal Type GetComponent(string path)
         {
             routeMap.TryGetValue(path, out var component);

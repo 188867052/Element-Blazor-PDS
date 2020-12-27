@@ -1,5 +1,4 @@
 ﻿using Element.Admin.Abstract;
-using Element.Admin.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,23 +7,22 @@ using System.Transactions;
 
 namespace Element.Admin.ServerRender
 {
-    public class CustomerService : ICustomerService
+    public class IssueService : IIssueService
     {
         private readonly DbContext dbContext;
 
-        public CustomerService(DbContext dbContext)
+        public IssueService(DbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(CustomerModel model)
+        public async Task AddAsync(IssueModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-           
-            dbContext.Set<Customer>().Add(new Customer
+            dbContext.Set<Entity.Issue>().Add(new Entity.Issue
             {
                 Name = model.Name,
-                ContactPersion = model.ContactPerson,
+                Description = model.Description,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -35,24 +33,24 @@ namespace Element.Admin.ServerRender
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Customer>().Remove(dbContext.Set<Customer>().Find(id));
+            dbContext.Set<Entity.Issue>().Remove(dbContext.Set<Entity.Issue>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Customer>> GetAll()
+        public Task<List<Entity.Issue>> GetAll()
         {
-            return dbContext.Set<Customer>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Entity.Issue>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(CustomerModel model)
+        public async Task UpdateAsync(IssueModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Customer>().Find(model.Id);
+            var entity = dbContext.Set<Entity.Issue>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            entity.ContactPersion = model.ContactPerson;
-            dbContext.Set<Customer>().Update(entity);
+            entity.Description = model.Description;
+            dbContext.Set<Entity.Issue>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

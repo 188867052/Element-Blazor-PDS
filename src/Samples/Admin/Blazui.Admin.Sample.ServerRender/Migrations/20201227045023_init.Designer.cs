@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.ServerRender.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20201227035608_init")]
+    [Migration("20201227045023_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,8 +62,10 @@ namespace Admin.ServerRender.Migrations
 
             modelBuilder.Entity("Element.Admin.Entity.Issue", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");

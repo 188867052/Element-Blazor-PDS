@@ -20,6 +20,7 @@ namespace Admin.ServerRender
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddTransient<IIssueService, IssueService>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddAdmin<DocsDbContext, IdentityUser>();
             return services;

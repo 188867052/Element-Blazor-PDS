@@ -8,18 +8,18 @@
             <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
         </BButtonGroup>
     }
-    <BTable DataSource="Users" @ref="table" IgnoreProperties="new string[] { nameof(UserModel.Password),nameof(UserModel.Id),nameof(UserModel.RoleIds)}" HasSelectionColumn="false">
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(UserModel.Password),nameof(UserModel.Id),nameof(UserModel.RoleIds)}" HasSelectionColumn="false">
         <BTableColumns>
             @if (CanUpdate || CanDelete)
             {
-                <BTableTemplateColumn Text="操作" Context="user">
+                <BTableTemplateColumn Text="操作" Context="model">
                     @if (CanUpdate)
                     {
-                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(user))">编辑</BButton>
+                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
                     }
                     @if (CanDelete)
                     {
-                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Del(user))">删除</BButton>
+                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
                     }
                 </BTableTemplateColumn>
             }

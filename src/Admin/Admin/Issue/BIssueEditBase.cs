@@ -1,57 +1,48 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Element.Admin.Abstract;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Element.Admin
 {
     public class BIssueEditBase : BAdminPageBase
     {
         internal BForm form;
-        [Parameter]
-        public UserModel EditingUser { get; set; }
+        private bool isCreate = false;
 
-        internal List<TransferItem> RoleItems;
+        [Parameter]
+        public IssueModel Model { get; set; }
+
         [Parameter]
         public DialogOption Dialog { get; set; }
-        private bool isCreate = false;
+
+        [Inject]
+        public IIssueService IssueService { get; set; }
+
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            isCreate = EditingUser == null;
-            RoleItems = UserService.GetRoles().Select(x => new TransferItem()
-            {
-                Id = x.Id,
-                Label = x.Name
-            }).ToList();
+            isCreate = Model == null;
         }
-        public async System.Threading.Tasks.Task SubmitAsync()
-        {
-            if (!form.IsValid())
-            {
-                return;
-            }
 
-            string error;
-            EditingUser = form.GetValue<UserModel>();
-            if (string.IsNullOrWhiteSpace(EditingUser.Password))
-            {
-                EditingUser.Password = "123456";
-            }
+        public async Task SubmitAsync()
+        {
+            if (!form.IsValid()) return;
+
+            Model = form.GetValue<IssueModel>();
             if (isCreate)
             {
-                error = await UserService.CreateUserAsync(EditingUser);
+                await IssueService.AddAsync(Model);
+                Toast("创建问题成功！");
             }
             else
             {
-                error = await UserService.UpdateUserAsync(EditingUser);
+                await IssueService.UpdateAsync(Model);
+                Toast("更新问题成功！");
             }
-            if (!string.IsNullOrWhiteSpace(error))
-            {
-                Toast(error);
-                return;
-            }
-            _ = DialogService.CloseDialogAsync(this, (object)null);
+           
+            await DialogService.CloseDialogAsync(this, (object)null);
         }
-
     }
 }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin.Abstract
 {
-    public interface IProductService
+    public interface IProductService : ITransientService
     {
         Task AddAsync(ProductModel model);
         Task DeleteAsync(int id);

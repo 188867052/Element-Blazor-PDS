@@ -1,15 +1,21 @@
-﻿using Element.Admin.Issue;
+﻿using Element.Admin.Abstract;
+using Element.Admin.Issue;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Element.Admin
 {
     public class BIssueManageBase : BAdminPageBase
     {
-        protected List<UserModel> Users { get; private set; } = new List<UserModel>();
+        protected List<IssueModel> Models { get; private set; } = new List<IssueModel>();
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
+
+        [Inject]
+        public IIssueService IssueService { get; set; }
 
         protected BTable table;
 
@@ -29,20 +35,25 @@ namespace Element.Admin
 
         private async Task RefreshAsync()
         {
-            if (table == null)
+            if (table == null) return;
+
+            Models = (await IssueService.GetAll()).Select(o => new IssueModel
             {
-                return;
-            }
-            Users = await UserService.GetUsersAsync();
+                Id = o.Id,
+                Name = o.Name,
+                Description = o.Description,
+                UpdateTime = o.UpdateTime,
+                CreateTime = o.CreateTime,
+            }).ToList();
             table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();
         }
 
-        public async Task EditAsync(object user)
+        public async Task EditAsync(object model)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BIssueEdit.EditingUser), user);
+            parameters.Add(nameof(BIssueEdit.Model), model);
             await DialogService.ShowDialogAsync<BIssueEdit>("编辑问题", 800, parameters);
             await RefreshAsync();
         }
@@ -50,25 +61,17 @@ namespace Element.Admin
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
-            if (!firstRender)
-            {
-                return;
-            }
+            if (!firstRender) return;
+
             await RefreshAsync();
         }
 
-        public async Task Del(object user)
+        public async Task Delete(object user)
         {
-            var confirm = await ConfirmAsync("确认删除该用户？");
-            if (confirm != MessageBoxResult.Ok)
-            {
-                return;
-            }
-            var result = await UserService.DeleteUsersAsync(((UserModel)user).Id);
-            if (string.IsNullOrWhiteSpace(result))
-            {
-                return;
-            }
+            if (await ConfirmAsync("确认删除该问题？") != MessageBoxResult.Ok) return;
+
+            await IssueService.DeleteAsync(((IssueModel)user).Id);
+            Toast("删除问题成功！");
             await RefreshAsync();
         }
     }

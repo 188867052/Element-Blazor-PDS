@@ -19,7 +19,7 @@ namespace Element.Admin
         protected BForm form;
 
         [Inject]
-        private Element.MessageBox MessageBox { get; set; }
+        private MessageBox MessageBox { get; set; }
 
         protected string defaultMenuIndex;
 
@@ -88,7 +88,7 @@ namespace Element.Admin
             await UserService.LogoutAsync(form, NavigationManager.Uri);
         }
 
-        internal async System.Threading.Tasks.Task LogoutAsync()
+        internal async Task LogoutAsync()
         {
             var result = await MessageBox.ConfirmAsync("是否确认注销登录？");
             if (result != MessageBoxResult.Ok)
