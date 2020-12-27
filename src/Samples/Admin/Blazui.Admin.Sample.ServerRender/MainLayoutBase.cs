@@ -12,9 +12,9 @@ namespace Admin.ServerRender
         {
             Menus.Add(new MenuModel()
             {
-                Label = "首页",
-                Icon = "el-icon-star-on",
-                Route = "/products"
+                Label = "Home",
+                Icon = "el-icon-home",
+                Route = "/"
             });
             Menus.Add(new MenuModel()
             {
