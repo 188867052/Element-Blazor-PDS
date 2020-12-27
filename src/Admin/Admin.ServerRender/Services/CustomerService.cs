@@ -31,6 +31,14 @@ namespace Element.Admin.ServerRender
             scope.Complete();
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            dbContext.Set<Customer>().Remove(dbContext.Set<Customer>().Find(id));
+            await dbContext.SaveChangesAsync();
+            scope.Complete();
+        }
+
         public Task<List<Customer>> GetAll()
         {
             return dbContext.Set<Customer>().AsNoTracking().ToListAsync();

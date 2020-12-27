@@ -68,18 +68,13 @@ namespace Element.Admin
             await RefreshAsync();
         }
 
-        public async Task Del(object user)
+        public async Task Delete(object model)
         {
             var confirm = await ConfirmAsync("确认删除该客户？");
-            if (confirm != MessageBoxResult.Ok)
-            {
-                return;
-            }
-            var result = await UserService.DeleteUsersAsync(((UserModel)user).Id);
-            if (string.IsNullOrWhiteSpace(result))
-            {
-                return;
-            }
+            if (confirm != MessageBoxResult.Ok) return;
+
+            await CustomerService.DeleteAsync(((CustomerModel)model).Id);
+            Toast("删除成功！");
             await RefreshAsync();
         }
     }
