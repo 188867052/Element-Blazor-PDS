@@ -27,7 +27,7 @@ namespace Admin.ServerRender
                 options.UseSqlServer("server=119.45.37.57;database=Admin;uid=sa;pwd=Pass@Word1;");
             });
             services.AddScoped<DbContext, DocsDbContext>();
-            services.AddAdminAsync<UserService>().Wait();
+            services.AddAdmin<UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

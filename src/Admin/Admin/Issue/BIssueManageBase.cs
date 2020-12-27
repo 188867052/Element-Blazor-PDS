@@ -1,4 +1,4 @@
-﻿using Element.Admin.User;
+﻿using Element.Admin.Issue;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,7 +10,6 @@ namespace Element.Admin
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
-        internal bool CanReset { get; private set; }
 
         protected BTable table;
 
@@ -20,17 +19,15 @@ namespace Element.Admin
             CanCreate = IsCanAccessAny(AdminResources.CreateUser.ToString());
             CanUpdate = IsCanAccessAny(AdminResources.UpdateUser.ToString());
             CanDelete = IsCanAccessAny(AdminResources.DeleteUser.ToString());
-            CanReset = IsCanAccessAny(AdminResources.ResetPassword.ToString());
         }
 
-
-        public async Task CreateUserAsync()
+        public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BUserEdit>("创建用户", 800, new Dictionary<string, object>());
-            await RefreshUsersAsync();
+            await DialogService.ShowDialogAsync<BIssueEdit>("创建问题", 800, new Dictionary<string, object>());
+            await RefreshAsync();
         }
 
-        private async Task RefreshUsersAsync()
+        private async Task RefreshAsync()
         {
             if (table == null)
             {
@@ -45,9 +42,9 @@ namespace Element.Admin
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BUserEdit.EditingUser), user);
-            await DialogService.ShowDialogAsync<BUserEdit>("编辑用户", 800, parameters);
-            await RefreshUsersAsync();
+            parameters.Add(nameof(BIssueEdit.EditingUser), user);
+            await DialogService.ShowDialogAsync<BIssueEdit>("编辑问题", 800, parameters);
+            await RefreshAsync();
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -57,7 +54,7 @@ namespace Element.Admin
             {
                 return;
             }
-            await RefreshUsersAsync();
+            await RefreshAsync();
         }
 
         public async Task Del(object user)
@@ -72,22 +69,7 @@ namespace Element.Admin
             {
                 return;
             }
-            await RefreshUsersAsync();
-        }
-
-        public async Task Reset(object user)
-        {
-            var confirm = await ConfirmAsync("确认将该用户的密码重置为 12345678 吗？");
-            if (confirm != MessageBoxResult.Ok)
-            {
-                return;
-            }
-            var error = await UserService.ResetPasswordAsync(((UserModel)user).Id, "12345678");
-            if (string.IsNullOrWhiteSpace(error))
-            {
-                return;
-            }
-            Toast(error);
+            await RefreshAsync();
         }
     }
 }

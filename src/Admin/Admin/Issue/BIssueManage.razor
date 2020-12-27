@@ -5,7 +5,7 @@
     @if (CanCreate)
     {
         <BButtonGroup>
-            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateUserAsync">创建问题</BButton>
+            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
         </BButtonGroup>
     }
     <BTable DataSource="Users" @ref="table" IgnoreProperties="new string[] { nameof(UserModel.Password),nameof(UserModel.Id),nameof(UserModel.RoleIds)}" HasSelectionColumn="false">
@@ -20,11 +20,6 @@
                     @if (CanDelete)
                     {
                         <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Del(user))">删除</BButton>
-                    }
-
-                    @if (CanReset)
-                    {
-                        <BButton Type="@ButtonType.Info" Size="@ButtonSize.Mini" OnClick="@(e => Reset(user))">重置密码</BButton>
                     }
                 </BTableTemplateColumn>
             }

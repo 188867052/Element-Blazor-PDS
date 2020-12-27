@@ -4,13 +4,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Admin.ServerRender;
-using System.Threading.Tasks;
 
 namespace Element.Admin.Sample.ServerRender
 {
     public static class ExtensionBuilder
     {
-        public static async Task<IServiceCollection> AddAdminAsync<TUserService>(this IServiceCollection services)
+        public static IServiceCollection AddAdmin<TUserService>(this IServiceCollection services)
             where TUserService : class, IUserService
         {
             services.AddRazorPages();
