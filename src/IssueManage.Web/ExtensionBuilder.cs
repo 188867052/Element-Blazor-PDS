@@ -4,9 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Element;
 using Element.Admin;
 using IssueManage.Pages.Abstract;
+using Admin.ServerRender;
 using IssueManage.Services;
 
-namespace Admin.ServerRender
+namespace IssueManage.Web
 {
     public static class ExtensionBuilder
     {

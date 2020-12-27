@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using IssueManage.Pages.Abstract;
 using IssueManage.Services;
+using IssueManage.Web;
 
 namespace Admin.ServerRender
 {
