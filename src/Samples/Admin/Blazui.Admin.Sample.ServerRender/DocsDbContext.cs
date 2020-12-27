@@ -22,8 +22,17 @@ namespace Admin.ServerRender
                     x.RoleId
                 });
             });
+
+            builder.Entity<Issue>(e =>
+            {
+                e.HasKey(x => new
+                {
+                    x.Id,
+                });
+            });
         }
 
         public DbSet<RoleResource> RoleResources { get; set; }
+        public DbSet<Issue> Issues { get; set; }
     }
 }
