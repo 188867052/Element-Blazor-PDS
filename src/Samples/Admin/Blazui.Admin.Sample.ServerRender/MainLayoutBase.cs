@@ -13,7 +13,7 @@ namespace Admin.ServerRender
             Menus.Add(new MenuModel()
             {
                 Label = "Home",
-                Icon = "el-icon-home",
+                Icon = "el-icon-s-home",
                 Route = "/"
             });
             Menus.Add(new MenuModel()
@@ -43,7 +43,7 @@ namespace Admin.ServerRender
                 {
                     new MenuModel(){
                          Label="客户管理",
-                         Icon="el-icon-s-promotion",
+                         Icon="el-icon-s-custom",
                          Route="/customer"
                     },
                     new MenuModel(){
