@@ -1,0 +1,15 @@
+﻿@inherits BCustomerEditBase
+<BForm Value="EditingUser" @ref="form" EnableAlwaysRender="true">
+    <BFormItem TValue="string" IsHidden="true" Name="@nameof(UserModel.Id)">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="string" Label="客户名称" Name="@nameof(UserModel.Username)" IsRequired="true">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="string" Label="邮箱" Name="@nameof(UserModel.Email)">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormActionItem Style="text-align:center">
+        <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
+    </BFormActionItem>
+</BForm>

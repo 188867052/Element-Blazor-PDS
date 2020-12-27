@@ -33,8 +33,26 @@ namespace Admin.ServerRender
                          Route="/component"
                     }
                 }
-            }); ;
+            });
 
+            Menus.Add(new MenuModel()
+            {
+                Label = "设置",
+                Icon = "el-icon-setting",
+                Children = new List<MenuModel>()
+                {
+                    new MenuModel(){
+                         Label="客户",
+                         Icon="el-icon-s-promotion",
+                         Route="/customer"
+                    },
+                    new MenuModel(){
+                         Label="产品",
+                         Icon="el-icon-s-management",
+                         Route="/product"
+                    }
+                }
+            });
         }
     }
 }

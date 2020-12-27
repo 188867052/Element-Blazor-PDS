@@ -1,0 +1,28 @@
+﻿@page "/customer"
+@inherits BCustomerManageBase
+@attribute [Resource("customerList", "客户列表")]
+<BAuthorizeView Roles="@Roles">
+    @if (CanCreate)
+    {
+        <BButtonGroup>
+            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建客户</BButton>
+        </BButtonGroup>
+    }
+    <BTable DataSource="Users" @ref="table" IgnoreProperties="new string[] { nameof(UserModel.Password),nameof(UserModel.Id),nameof(UserModel.RoleIds)}" HasSelectionColumn="false">
+        <BTableColumns>
+            @if (CanUpdate || CanDelete)
+            {
+                <BTableTemplateColumn Text="操作" Context="user">
+                    @if (CanUpdate)
+                    {
+                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(user))">编辑</BButton>
+                    }
+                    @if (CanDelete)
+                    {
+                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Del(user))">删除</BButton>
+                    }
+                </BTableTemplateColumn>
+            }
+        </BTableColumns>
+    </BTable>
+</BAuthorizeView>
