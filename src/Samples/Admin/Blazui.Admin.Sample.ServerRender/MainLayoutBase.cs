@@ -47,7 +47,7 @@ namespace Admin.ServerRender
                          Route="/customer"
                     },
                     new MenuModel(){
-                         Label="产品",
+                         Label="产品管理",
                          Icon="el-icon-s-management",
                          Route="/product"
                     }

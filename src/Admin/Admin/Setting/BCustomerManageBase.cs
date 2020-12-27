@@ -35,15 +35,14 @@ namespace Element.Admin
 
         private async Task RefreshAsync()
         {
-            if (table == null)
-            {
-                return;
-            }
+            if (table == null) return;
+
             Models = (await CustomerService.GetAll()).Select(o => new CustomerModel
             {
                 Id = o.Id,
                 ContactPerson = o.ContactPersion,
                 Name = o.Name,
+                CreateTime = o.CreateTime,
             }).ToList();
             table.MarkAsRequireRender();
             RequireRender = true;
@@ -61,10 +60,8 @@ namespace Element.Admin
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
-            if (!firstRender)
-            {
-                return;
-            }
+            if (!firstRender) return;
+
             await RefreshAsync();
         }
 
