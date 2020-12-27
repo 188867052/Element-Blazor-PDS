@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Element.Admin.ServerRender;
+using AutoMapper;
+using Element.Admin.Abstract;
 
 namespace Admin.ServerRender
 {
@@ -25,6 +27,7 @@ namespace Admin.ServerRender
             });
             services.AddScoped<DbContext, DocsDbContext>();
             services.AddAdmin<UserService>();
+            services.AddAutoMapper(typeof(Startup).Assembly, typeof(IAutoMapper).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

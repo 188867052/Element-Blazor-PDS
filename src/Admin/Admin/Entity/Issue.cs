@@ -11,5 +11,8 @@ namespace Element.Admin.Entity
         public IssueStatus Status { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime UpdateTime { get; set; }
+        public string ChangeFrom { get; internal set; }
+        public DateTime ImplementTime { get; internal set; }
+        public string Product { get; internal set; }
     }
 }

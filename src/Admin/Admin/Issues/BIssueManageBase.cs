@@ -1,9 +1,12 @@
-﻿using Element.Admin.Abstract;
-using Element.Admin.Issue;
+﻿using AutoMapper;
+using Element.Admin.Abstract;
+using Element.Admin.Issues;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Element.Admin.Extension;
+using Element.Admin.Issues;
 
 namespace Element.Admin
 {
@@ -16,6 +19,9 @@ namespace Element.Admin
 
         [Inject]
         public IIssueService IssueService { get; set; }
+
+        [Inject]
+        public IMapper mapper { get; set; }
 
         protected BTable table;
 
@@ -37,15 +43,9 @@ namespace Element.Admin
         {
             if (table == null) return;
 
-            Models = (await IssueService.GetAll()).Select(o => new IssueModel
-            {
-                Id = o.Id,
-                Name = o.Name,
-                Status = o.Status,
-                Description = o.Description,
-                UpdateTime = o.UpdateTime,
-                CreateTime = o.CreateTime,
-            }).ToList();
+            var issues = await IssueService.GetAll();
+            Models = mapper.Map<Entity.Issue, IssueModel>(issues).ToList();
+
             table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();

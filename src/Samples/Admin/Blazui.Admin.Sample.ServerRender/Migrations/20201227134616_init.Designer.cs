@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.ServerRender.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20201227120109_init")]
+    [Migration("20201227134616_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,16 +67,25 @@ namespace Admin.ServerRender.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("ChangeFrom")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("ImplementTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Level")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Product")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")

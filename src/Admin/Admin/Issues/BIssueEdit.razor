@@ -3,10 +3,13 @@
     <BFormItem TValue="int" IsHidden="true" Name="@nameof(IssueModel.Id)">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="string" Label="问题名称" Name="@nameof(IssueModel.Name)" IsRequired="true">
+    <BFormItem TValue="string" Label="问题描述" Name="@nameof(IssueModel.Description)" IsRequired="true">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
+    <BFormItem TValue="string" Label="涉及产品" Name="@nameof(IssueModel.Description)">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="DateTime" Label="实施时间" Name="@nameof(IssueModel.ImplementTime)">
         <BInput TValue="string"></BInput>
     </BFormItem>
     <BFormActionItem Style="text-align:center">

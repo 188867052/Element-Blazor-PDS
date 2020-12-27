@@ -1,6 +1,6 @@
 # 数据库还原
-1.add-migration init -Context DocsDbContext
-2.update-database  -Context DocsDbContext
+add-migration init -Context DocsDbContext
+update-database  -Context DocsDbContext
 
 # Blazui
 [![Nuget](https://img.shields.io/nuget/dt/Element.svg)](https://www.nuget.org/packages/Element/)

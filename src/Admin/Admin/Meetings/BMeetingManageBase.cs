@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using Element.Admin.Issue.Meeting;
+using Element.Admin.Meetings;
 
 namespace Element.Admin
 {
