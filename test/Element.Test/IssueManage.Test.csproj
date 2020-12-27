@@ -24,7 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Admin\Admin.ClientRender\Element.Admin.ClientRender.csproj" />
     <ProjectReference Include="..\..\src\Admin\Admin.ServerRender\Element.Admin.ServerRender.csproj" />
-    <ProjectReference Include="..\..\src\Samples\Admin\Blazui.Admin.Sample.ServerRender\Admin.ServerRender.csproj" />
+    <ProjectReference Include="..\..\src\Samples\Admin\Blazui.Admin.Sample.ServerRender\IssueManage.Web.csproj" />
     <ProjectReference Include="..\..\src\Samples\Blazui\Blazui.ClientRender\Element.ClientRender.csproj" />
   </ItemGroup>
 

@@ -25,11 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin.ServerRender"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin.ClientRender", "src\Admin\Admin.ClientRender\Element.Admin.ClientRender.csproj", "{8DF962DB-2A47-4931-A158-89A61A44F635}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.ServerRender", "src\Samples\Admin\Blazui.Admin.Sample.ServerRender\Admin.ServerRender.csproj", "{EE404089-CDFB-4699-9997-8166D6B3A6DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Web", "src\Samples\Admin\Blazui.Admin.Sample.ServerRender\IssueManage.Web.csproj", "{EE404089-CDFB-4699-9997-8166D6B3A6DA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin", "src\Admin\Admin\Element.Admin.csproj", "{36BBE899-CF01-4ECF-B4F4-627D63531005}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Test", "test\Element.Test\Element.Test.csproj", "{D9F69E27-BF1F-4088-AD24-5961B09F9D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Test", "test\Element.Test\IssueManage.Test.csproj", "{D9F69E27-BF1F-4088-AD24-5961B09F9D32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
