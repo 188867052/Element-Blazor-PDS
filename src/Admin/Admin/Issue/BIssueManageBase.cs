@@ -41,6 +41,7 @@ namespace Element.Admin
             {
                 Id = o.Id,
                 Name = o.Name,
+                Status = o.Status,
                 Description = o.Description,
                 UpdateTime = o.UpdateTime,
                 CreateTime = o.CreateTime,

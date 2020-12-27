@@ -12,6 +12,9 @@ namespace Element.Admin
         [TableColumn(Text = "描述")]
         public string Description { get; set; }
 
+        [TableColumn(Text = "状态")]
+        public IssueStatus Status { get; set; }
+
         [TableColumn(Text = "创建时间")]
         public DateTime CreateTime { get; set; }    
         

@@ -30,9 +30,4 @@
     <ProjectReference Include="..\..\Markdown\Element.Markdown.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="View\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
-
 </Project>

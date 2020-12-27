@@ -49,6 +49,7 @@ namespace Element.Admin.ServerRender
             var entity = dbContext.Set<Entity.Issue>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
+            entity.Status = model.Status;
             entity.Description = model.Description;
             dbContext.Set<Entity.Issue>().Update(entity);
             await dbContext.SaveChangesAsync();
