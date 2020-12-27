@@ -1,6 +1,5 @@
 ﻿using Element;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ using IssueManage.Pages.Entity;
 using IssueManage.Pages.Role;
 using IssueManage.Pages.User;
 
-namespace Element.Admin.ServerRender
+namespace IssueManage.Services
 {
     public abstract class UserServiceBase<TUser, TRole> : IUserService
            where TUser : IdentityUser

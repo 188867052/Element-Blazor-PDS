@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace Element.Admin.ServerRender
+namespace IssueManage.Services
 {
     public class ProductService : IProductService
     {

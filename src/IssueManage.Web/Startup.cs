@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Element.Admin.ServerRender;
 using AutoMapper;
 using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 
 namespace Admin.ServerRender
 {

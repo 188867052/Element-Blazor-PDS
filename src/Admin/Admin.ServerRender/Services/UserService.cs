@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace Element.Admin.ServerRender
+namespace IssueManage.Services
 {
     public class UserService : UserServiceBase<IdentityUser, IdentityRole>
     {

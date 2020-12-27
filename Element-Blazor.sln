@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.ServerRender", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Markdown", "src\Markdown\Element.Markdown.csproj", "{76FD7947-A9C1-4449-B2D2-B0E59265E879}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin.ServerRender", "src\Admin\Admin.ServerRender\Element.Admin.ServerRender.csproj", "{6AD8C624-183A-4747-8621-E45F9763DD09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Services", "src\Admin\Admin.ServerRender\IssueManage.Services.csproj", "{6AD8C624-183A-4747-8621-E45F9763DD09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin.ClientRender", "src\Admin\Admin.ClientRender\Element.Admin.ClientRender.csproj", "{8DF962DB-2A47-4931-A158-89A61A44F635}"
 EndProject

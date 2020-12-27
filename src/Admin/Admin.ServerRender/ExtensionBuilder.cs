@@ -1,12 +1,12 @@
-﻿using IssueManage.Pages.Abstract;
-using Microsoft.AspNetCore.Builder;
+﻿using Element.Admin;
+using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Element.Admin.ServerRender
+namespace IssueManage.Services
 {
     public static class ExtensionBuilder
     {

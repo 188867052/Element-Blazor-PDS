@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Element;
+using System;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Meetings
 {
     public class MeetingModel
     {

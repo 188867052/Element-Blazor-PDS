@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Admin\Admin.ServerRender\Element.Admin.ServerRender.csproj" />
+    <ProjectReference Include="..\Admin\Admin.ServerRender\IssueManage.Services.csproj" />
     <ProjectReference Include="..\Admin\Admin\IssueManage.Pages.csproj" />
   </ItemGroup>
 </Project>

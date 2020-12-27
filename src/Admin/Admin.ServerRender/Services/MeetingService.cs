@@ -1,12 +1,13 @@
 ﻿using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Entity;
+using IssueManage.Pages.Meetings;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace Element.Admin.ServerRender
+namespace IssueManage.Services
 {
     public class MeetingService : IMeetingService
     {

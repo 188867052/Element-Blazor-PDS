@@ -1,10 +1,10 @@
-﻿using Element.Admin.ServerRender;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Element;
 using Element.Admin;
 using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 
 namespace Admin.ServerRender
 {

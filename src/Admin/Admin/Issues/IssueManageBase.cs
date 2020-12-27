@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using IssueManage.Pages.Framework.Extension;
 using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Framework.Extension;
 using IssueManage.Pages.Entity;
 using IssueManage.Pages.Enum;
 using Element;
