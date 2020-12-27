@@ -12,25 +12,44 @@ namespace Admin.ServerRender
         {
             Menus.Add(new MenuModel()
             {
-                Label = "Home",
+                Label = "首页",
                 Icon = "el-icon-s-home",
                 Route = "/"
             });
             Menus.Add(new MenuModel()
             {
-                Label = "问题管理",
+                Label = "问题库",
                 Icon = "el-icon-document",
                 Children = new List<MenuModel>()
                 {
                     new MenuModel(){
-                         Label="问题列表",
+                         Label="问题数据库",
                          Icon="el-icon-s-promotion",
                          Route="/issue"
                     },
                     new MenuModel(){
-                         Label="会议系统",
+                         Label="问题状态表",
+                         Icon="el-icon-cpu",
+                         Route="/issue1"
+                    }
+                }
+            });
+
+            Menus.Add(new MenuModel()
+            {
+                Label = "会议系统",
+                Icon = "el-icon-document",
+                Children = new List<MenuModel>()
+                {
+                    new MenuModel(){
+                         Label="我的会议",
                          Icon="el-icon-cpu",
                          Route="/meeting"
+                    },
+                    new MenuModel(){
+                         Label="发起会议",
+                         Icon="el-icon-cpu",
+                         Route="/meeting1"
                     }
                 }
             });
