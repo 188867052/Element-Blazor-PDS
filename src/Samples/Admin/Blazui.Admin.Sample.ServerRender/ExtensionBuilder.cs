@@ -19,6 +19,7 @@ namespace Admin.ServerRender
             services.AddBlazuiServices();
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddAdmin<DocsDbContext, IdentityUser>();
             return services;

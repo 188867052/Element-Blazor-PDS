@@ -1,0 +1,41 @@
+﻿using Element.Admin.Abstract;
+using Microsoft.AspNetCore.Components;
+using System.Threading.Tasks;
+
+namespace Element.Admin
+{
+    public class BProductEditBase : BAdminPageBase
+    {
+        internal BForm form;
+        [Parameter]
+        public ProductModel Model { get; set; }
+
+        [Inject]
+        public IProductService ProductService { get; set; }
+
+        [Parameter]
+        public DialogOption Dialog { get; set; }
+        private bool isCreate;
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            isCreate = Model == null;
+        }
+
+        public async Task SubmitAsync()
+        {
+            if (!form.IsValid()) return;
+
+            Model = form.GetValue<ProductModel>();
+            if (isCreate)
+            {
+                await ProductService.AddAsync(Model);
+            }
+            else
+            {
+                await ProductService.UpdateAsync(Model);
+            }
+            await DialogService.CloseDialogAsync(this, (object)null);
+        }
+    }
+}

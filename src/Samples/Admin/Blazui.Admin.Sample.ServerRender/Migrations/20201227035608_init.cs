@@ -7,27 +7,22 @@ namespace Admin.ServerRender.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-         
+            
 
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactPersion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ContactPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReceivePersion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ReceivePhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<int>(type: "int", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
          
@@ -38,9 +33,9 @@ namespace Admin.ServerRender.Migrations
            
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Products");
 
-           
+         
         }
     }
 }

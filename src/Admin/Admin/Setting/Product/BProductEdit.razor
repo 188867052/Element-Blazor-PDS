@@ -1,0 +1,15 @@
+﻿@inherits BProductEditBase
+<BForm Value="Model" @ref="form" EnableAlwaysRender="true">
+    <BFormItem TValue="int" IsHidden="true" Name="@nameof(ProductModel.Id)">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="string" Label="产品名称" Name="@nameof(ProductModel.Name)" IsRequired="true">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="string" Label="描述" Name="@nameof(ProductModel.Description)">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormActionItem Style="text-align:center">
+        <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
+    </BFormActionItem>
+</BForm>

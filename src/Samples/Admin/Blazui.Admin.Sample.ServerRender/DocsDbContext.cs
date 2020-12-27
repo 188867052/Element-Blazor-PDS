@@ -29,9 +29,17 @@ namespace Admin.ServerRender
                 {
                     x.Id,
                 });
-            }); 
-            
+            });
+
             builder.Entity<Customer>(e =>
+            {
+                e.HasKey(x => new
+                {
+                    x.Id,
+                });
+            });
+
+            builder.Entity<Product>(e =>
             {
                 e.HasKey(x => new
                 {
@@ -43,5 +51,6 @@ namespace Admin.ServerRender
         public DbSet<RoleResource> RoleResources { get; set; }
         public DbSet<Issue> Issues { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
