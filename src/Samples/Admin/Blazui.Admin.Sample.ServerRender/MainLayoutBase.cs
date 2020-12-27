@@ -28,9 +28,9 @@ namespace Admin.ServerRender
                          Route="/issue"
                     },
                     new MenuModel(){
-                         Label="组件文档",
-                         Icon="el-icon-s-management",
-                         Route="/component"
+                         Label="会议系统",
+                         Icon="el-icon-cpu",
+                         Route="/meeting"
                     }
                 }
             });

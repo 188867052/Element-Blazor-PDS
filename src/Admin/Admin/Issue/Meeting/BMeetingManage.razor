@@ -1,0 +1,28 @@
+﻿@page "/meeting"
+@inherits BMeetingManageBase
+@attribute [Resource("MeetingList", "会议系统")]
+<BAuthorizeView Roles="@Roles">
+    @if (CanCreate)
+    {
+        <BButtonGroup>
+            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建会议</BButton>
+        </BButtonGroup>
+    }
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">
+        <BTableColumns>
+            @if (CanUpdate || CanDelete)
+            {
+                <BTableTemplateColumn Text="操作" Context="model">
+                    @if (CanUpdate)
+                    {
+                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
+                    }
+                    @if (CanDelete)
+                    {
+                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
+                    }
+                </BTableTemplateColumn>
+            }
+        </BTableColumns>
+    </BTable>
+</BAuthorizeView>

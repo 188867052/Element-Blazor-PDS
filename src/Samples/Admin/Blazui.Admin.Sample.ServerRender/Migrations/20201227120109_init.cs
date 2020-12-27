@@ -5,26 +5,22 @@ namespace Admin.ServerRender.Migrations
 {
     public partial class init : Migration
     {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.CreateTable(
-              name: "Issues",
-              columns: table => new
-              {
-                  Id = table.Column<int>(type: "int", nullable: false)
-                      .Annotation("SqlServer:Identity", "1, 1"),
-                  Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                  Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                  Level = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                  Status = table.Column<int>(type: "int", nullable: false),
-                  CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                  UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
-              },
-              constraints: table =>
-              {
-                  table.PrimaryKey("PK_Issues", x => x.Id);
-              });
-
+                   name: "Meetings",
+                   columns: table => new
+                   {
+                       Id = table.Column<int>(type: "int", nullable: false)
+                           .Annotation("SqlServer:Identity", "1, 1"),
+                       Topic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                       Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                       CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                       UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                   },
+                   constraints: table =>
+                   {
+                       table.PrimaryKey("PK_Meetings", x => x.Id);
+                   });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -49,6 +45,9 @@ namespace Admin.ServerRender.Migrations
 
             migrationBuilder.DropTable(
                 name: "Issues");
+
+            migrationBuilder.DropTable(
+                name: "Meetings");
 
             migrationBuilder.DropTable(
                 name: "Products");
