@@ -25,12 +25,12 @@ namespace Admin.ServerRender
                     new MenuModel(){
                          Label="问题列表",
                          Icon="el-icon-s-promotion",
-                         Route="/docs/quickstart"
+                         Route="/issue"
                     },
                     new MenuModel(){
                          Label="组件文档",
                          Icon="el-icon-s-management",
-                         Route="/docs/component"
+                         Route="/component"
                     }
                 }
             }); ;

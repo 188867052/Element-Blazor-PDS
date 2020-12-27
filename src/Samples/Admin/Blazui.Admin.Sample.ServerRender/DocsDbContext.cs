@@ -1,4 +1,4 @@
-﻿using Element.Admin;
+﻿using Element.Admin.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

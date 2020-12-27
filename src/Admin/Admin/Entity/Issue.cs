@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Element.Admin
+namespace Element.Admin.Entity
 {
     public class Issue
     {

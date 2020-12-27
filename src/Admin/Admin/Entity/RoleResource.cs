@@ -1,4 +1,4 @@
-﻿namespace Element.Admin
+﻿namespace Element.Admin.Entity
 {
     public class RoleResource
     {
