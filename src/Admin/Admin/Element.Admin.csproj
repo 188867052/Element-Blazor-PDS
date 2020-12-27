@@ -30,4 +30,8 @@
     <ProjectReference Include="..\..\Markdown\Element.Markdown.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Issue\" />
+  </ItemGroup>
+
 </Project>
