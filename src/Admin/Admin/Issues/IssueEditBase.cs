@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Element.Admin
 {
-    public class BIssueEditBase : BAdminPageBase
+    public class IssueEditBase : BAdminPageBase
     {
         internal BForm form;
         private bool isCreate = false;

@@ -1,5 +1,5 @@
 ﻿@page "/issue"
-@inherits BIssueManageBase
+@inherits IssueManageBase
 @attribute [Resource("issueList", "问题列表")]
 <BAuthorizeView Roles="@Roles">
     @if (CanCreate)

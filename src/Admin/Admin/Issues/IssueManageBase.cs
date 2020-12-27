@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Element.Admin.Abstract;
-using Element.Admin.Issues;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ using Element.Admin.Issues;
 
 namespace Element.Admin
 {
-    public class BIssueManageBase : BAdminPageBase
+    public class IssueManageBase : BAdminPageBase
     {
         protected List<IssueModel> Models { get; private set; } = new List<IssueModel>();
         internal bool CanCreate { get; private set; }
@@ -35,7 +34,7 @@ namespace Element.Admin
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BIssueEdit>("创建问题", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<IssueEdit>("创建问题", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
@@ -54,8 +53,8 @@ namespace Element.Admin
         public async Task EditAsync(object model)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BIssueEdit.Model), model);
-            await DialogService.ShowDialogAsync<BIssueEdit>("编辑问题", 800, parameters);
+            parameters.Add(nameof(IssueEdit.Model), model);
+            await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
             await RefreshAsync();
         }
 
