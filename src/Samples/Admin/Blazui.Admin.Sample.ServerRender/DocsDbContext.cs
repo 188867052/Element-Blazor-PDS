@@ -29,10 +29,19 @@ namespace Admin.ServerRender
                 {
                     x.Id,
                 });
+            }); 
+            
+            builder.Entity<Customer>(e =>
+            {
+                e.HasKey(x => new
+                {
+                    x.Id,
+                });
             });
         }
 
         public DbSet<RoleResource> RoleResources { get; set; }
         public DbSet<Issue> Issues { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

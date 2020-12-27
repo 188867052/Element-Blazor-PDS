@@ -3,9 +3,10 @@ using Element.Admin.ServerRender;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Admin.ServerRender;
+using Element;
+using Element.Admin;
 
-namespace Element.Admin.Sample.ServerRender
+namespace Admin.ServerRender
 {
     public static class ExtensionBuilder
     {
@@ -18,6 +19,7 @@ namespace Element.Admin.Sample.ServerRender
             services.AddBlazuiServices();
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
+            services.AddTransient<ICustomerService, CustomerService>();
             services.AddAdmin<DocsDbContext, IdentityUser>();
             return services;
         }

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Element.Admin.Abstract;
+using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
 namespace Element.Admin
@@ -9,49 +8,34 @@ namespace Element.Admin
     {
         internal BForm form;
         [Parameter]
-        public UserModel EditingUser { get; set; }
+        public CustomerModel Model { get; set; }
 
-        internal List<TransferItem> RoleItems;
+        [Inject]
+        public ICustomerService CustomerService { get; set; }
+
         [Parameter]
         public DialogOption Dialog { get; set; }
-        private bool isCreate = false;
+        private bool isCreate;
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            isCreate = EditingUser == null;
-            RoleItems = UserService.GetRoles().Select(x => new TransferItem()
-            {
-                Id = x.Id,
-                Label = x.Name
-            }).ToList();
+            isCreate = Model == null;
         }
+
         public async Task SubmitAsync()
         {
-            if (!form.IsValid())
-            {
-                return;
-            }
+            if (!form.IsValid()) return;
 
-            string error;
-            EditingUser = form.GetValue<UserModel>();
-            if (string.IsNullOrWhiteSpace(EditingUser.Password))
-            {
-                EditingUser.Password = "123456";
-            }
+            Model = form.GetValue<CustomerModel>();
             if (isCreate)
             {
-                error = await UserService.CreateUserAsync(EditingUser);
+                CustomerService.Add(Model);
             }
             else
             {
-                error = await UserService.UpdateUserAsync(EditingUser);
+                CustomerService.Update(Model);
             }
-            if (!string.IsNullOrWhiteSpace(error))
-            {
-                Toast(error);
-                return;
-            }
-            _ = DialogService.CloseDialogAsync(this, (object)null);
+            await DialogService.CloseDialogAsync(this, (object)null);
         }
     }
 }

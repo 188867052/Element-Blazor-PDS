@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.ServerRender.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20201227000919_init")]
+    [Migration("20201227021846_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,46 @@ namespace Admin.ServerRender.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("Element.Admin.Issue", b =>
+            modelBuilder.Entity("Element.Admin.Entity.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("ContactPersion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceivePersion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceivePhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Element.Admin.Entity.Issue", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -49,7 +88,7 @@ namespace Admin.ServerRender.Migrations
                     b.ToTable("Issues");
                 });
 
-            modelBuilder.Entity("Element.Admin.RoleResource", b =>
+            modelBuilder.Entity("Element.Admin.Entity.RoleResource", b =>
                 {
                     b.Property<string>("ResourceId")
                         .HasColumnType("nvarchar(450)");

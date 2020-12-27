@@ -1,4 +1,4 @@
-﻿using Element.Admin.Sample.ServerRender;
+﻿using Admin.ServerRender;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;
 using PuppeteerSharp;

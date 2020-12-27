@@ -1,15 +1,21 @@
-﻿using Element.Admin.Setting;
+﻿using Element.Admin.Abstract;
+using Element.Admin.Setting;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Element.Admin
 {
     public class BCustomerManageBase : BAdminPageBase
     {
-        protected List<UserModel> Users { get; private set; } = new List<UserModel>();
+        protected List<CustomerModel> Models { get; private set; } = new List<CustomerModel>();
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
+
+        [Inject]
+        public ICustomerService CustomerService { get; set; }
 
         protected BTable table;
 
@@ -33,7 +39,12 @@ namespace Element.Admin
             {
                 return;
             }
-            Users = await UserService.GetUsersAsync();
+            Models = (await CustomerService.GetAll()).Select(o => new CustomerModel
+            {
+                Id = o.Id,
+                ContactPerson = o.ContactPersion,
+                Name = o.Name,
+            }).ToList();
             table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();
@@ -42,7 +53,7 @@ namespace Element.Admin
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BCustomerEdit.EditingUser), user);
+            parameters.Add(nameof(BCustomerEdit.Model), user);
             await DialogService.ShowDialogAsync<BCustomerEdit>("编辑客户", 800, parameters);
             await RefreshAsync();
         }

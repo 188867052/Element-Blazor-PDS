@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Element.Admin.ServerRender;
-using Element.Admin.Sample.ServerRender;
 
 namespace Admin.ServerRender
 {
