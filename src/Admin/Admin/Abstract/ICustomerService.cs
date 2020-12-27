@@ -6,8 +6,8 @@ namespace Element.Admin.Abstract
 {
     public interface ICustomerService
     {
-        void Add(CustomerModel model);
-        void Update(CustomerModel model);
+        Task AddAsync(CustomerModel model);
+        Task UpdateAsync(CustomerModel model);
         Task<List<Customer>> GetAll();
     }
 }

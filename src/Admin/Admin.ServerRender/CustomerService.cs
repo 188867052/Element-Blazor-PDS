@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Element.Admin.ServerRender
 {
@@ -16,8 +17,9 @@ namespace Element.Admin.ServerRender
             this.dbContext = dbContext;
         }
 
-        public void Add(CustomerModel model)
+        public async Task AddAsync(CustomerModel model)
         {
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
             dbContext.Set<Customer>().Add(new Customer
             {
                 Name = model.Name,
@@ -25,16 +27,18 @@ namespace Element.Admin.ServerRender
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
+            scope.Complete();
         }
 
         public Task<List<Customer>> GetAll()
         {
-            return dbContext.Set<Customer>().ToListAsync();
+            return dbContext.Set<Customer>().AsNoTracking().ToListAsync();
         }
 
-        public void Update(CustomerModel model)
+        public async Task UpdateAsync(CustomerModel model)
         {
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
             dbContext.Set<Customer>().Update(new Customer
             {
                 Id = model.Id,
@@ -42,7 +46,8 @@ namespace Element.Admin.ServerRender
                 ContactPersion = model.ContactPerson,
                 UpdateTime = DateTime.Now,
             });
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
+            scope.Complete();
         }
     }
 }

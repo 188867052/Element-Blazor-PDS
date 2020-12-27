@@ -42,7 +42,7 @@ namespace Admin.ServerRender
                 Children = new List<MenuModel>()
                 {
                     new MenuModel(){
-                         Label="客户",
+                         Label="客户管理",
                          Icon="el-icon-s-promotion",
                          Route="/customer"
                     },

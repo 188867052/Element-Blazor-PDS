@@ -29,11 +29,11 @@ namespace Element.Admin
             Model = form.GetValue<CustomerModel>();
             if (isCreate)
             {
-                CustomerService.Add(Model);
+                await CustomerService.AddAsync(Model);
             }
             else
             {
-                CustomerService.Update(Model);
+                await CustomerService.UpdateAsync(Model);
             }
             await DialogService.CloseDialogAsync(this, (object)null);
         }
