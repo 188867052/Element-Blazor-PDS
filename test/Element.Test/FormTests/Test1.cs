@@ -1,12 +1,12 @@
-﻿using PuppeteerSharp;
+﻿using IssueManage.Test;
+using PuppeteerSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.FormTests
+namespace IssueManage.Test.FormTests
 {
     [TestName("Form 表单", "基础用法")]
     public class Test1 : IDemoTester
@@ -100,7 +100,7 @@ namespace Element.Test.FormTests
             var checkbox6 = (await content6.QuerySelectorAllAsync("div.el-checkbox-group > label.el-checkbox > span.el-checkbox__label"))[1];
             await checkbox6.ClickAsync();
             await Task.Delay(50);
-            var checkedCheckbox6 = (await content6.QuerySelectorAsync("div.el-checkbox-group > label.el-checkbox.is-checked > span.el-checkbox__label"));
+            var checkedCheckbox6 = await content6.QuerySelectorAsync("div.el-checkbox-group > label.el-checkbox.is-checked > span.el-checkbox__label");
             var checkboxLabel = await checkbox6.EvaluateFunctionAsync<string>("x=>x.innerText");
             var checkedCheckboxLabel = await checkedCheckbox6.EvaluateFunctionAsync<string>("x=>x.innerText");
             Assert.Equal("地推活动", checkboxLabel.Trim());
@@ -113,7 +113,7 @@ namespace Element.Test.FormTests
             var radio7 = (await content7.QuerySelectorAllAsync("label.el-radio.el-radio-button--default > span.el-radio__label"))[1];
             await radio7.ClickAsync();
             await Task.Delay(50);
-            var checkedRadio7 = (await content7.QuerySelectorAsync("label.el-radio.is-checked.el-radio-button--default > span.el-radio__label"));
+            var checkedRadio7 = await content7.QuerySelectorAsync("label.el-radio.is-checked.el-radio-button--default > span.el-radio__label");
             var radioLabel7 = await radio7.EvaluateFunctionAsync<string>("x=>x.innerText");
             var checkedRadioLabel7 = await checkedRadio7.EvaluateFunctionAsync<string>("x=>x.innerText");
             Assert.Equal("线上场地免费", radioLabel7.Trim());

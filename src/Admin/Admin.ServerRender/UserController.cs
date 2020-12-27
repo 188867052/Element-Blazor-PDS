@@ -1,10 +1,11 @@
-﻿using Element.Admin.Abstract;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Element;
 using System.Threading.Tasks;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.User;
 
 namespace Element.Admin.ServerRender
 {

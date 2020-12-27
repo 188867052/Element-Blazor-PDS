@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class TestNameAttribute : Attribute
     {

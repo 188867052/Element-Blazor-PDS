@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Admin\Element.Admin.csproj" />
+    <ProjectReference Include="..\Admin\IssueManage.Pages.csproj" />
   </ItemGroup>
 
   <ItemGroup>

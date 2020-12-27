@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-using Element.Admin.Abstract;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Entity;
+using IssueManage.Pages.Issues;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,10 +25,10 @@ namespace Element.Admin.ServerRender
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
 
-            var issue = mapper.Map<IssueModel, Entity.Issue>(model);
+            var issue = mapper.Map<IssueModel, Issue>(model);
             issue.CreateTime = DateTime.Now;
             issue.UpdateTime = DateTime.Now;
-            dbContext.Set<Entity.Issue>().Add(issue);
+            dbContext.Set<Issue>().Add(issue);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
@@ -34,23 +36,23 @@ namespace Element.Admin.ServerRender
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Entity.Issue>().Remove(dbContext.Set<Entity.Issue>().Find(id));
+            dbContext.Set<Issue>().Remove(dbContext.Set<Issue>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Entity.Issue>> GetAll()
+        public Task<List<Issue>> GetAll()
         {
-            return dbContext.Set<Entity.Issue>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Issue>().AsNoTracking().ToListAsync();
         }
 
         public async Task UpdateAsync(IssueModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Entity.Issue>().Find(model.Id);
+            var entity = dbContext.Set<Issue>().Find(model.Id);
             mapper.Map(model, entity);
             entity.UpdateTime = DateTime.Now;
-            dbContext.Set<Entity.Issue>().Update(entity);
+            dbContext.Set<Issue>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

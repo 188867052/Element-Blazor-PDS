@@ -1,13 +1,11 @@
 ﻿using PuppeteerSharp;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class MenuTest : SetupTest
     {

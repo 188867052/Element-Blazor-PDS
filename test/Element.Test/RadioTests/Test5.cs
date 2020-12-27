@@ -1,11 +1,9 @@
 ﻿using PuppeteerSharp;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.RadioTests
+namespace IssueManage.Test.RadioTests
 {
     [TestName("Radio 单选框", "单选按钮组")]
     public class Test5 : IDemoTester

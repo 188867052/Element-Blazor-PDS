@@ -1,11 +1,13 @@
-﻿using Element.Admin.Abstract;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using Element.Admin.Setting.Customer;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Enum;
+using Element;
+using Element.Admin;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Setting.Customer
 {
     public class BCustomerManageBase : BAdminPageBase
     {

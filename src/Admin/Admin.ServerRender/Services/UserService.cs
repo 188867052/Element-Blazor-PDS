@@ -1,4 +1,6 @@
-﻿using Element.Admin.Entity;
+﻿using IssueManage.Pages.Entity;
+using IssueManage.Pages.Role;
+using IssueManage.Pages.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;

@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Element;
+using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     public partial class Table : BComponentBase
     {

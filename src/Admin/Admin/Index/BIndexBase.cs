@@ -1,12 +1,13 @@
-﻿using Element.Admin.Abstract;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 using AntDesign.Charts;
 using System;
+using IssueManage.Pages.Abstract;
+using Element.Admin;
+using IssueManage.Pages.Setting.Product;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Index
 {
     public class BIndexBase : BAdminPageBase
     {

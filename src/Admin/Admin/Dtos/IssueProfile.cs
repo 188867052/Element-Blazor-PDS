@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
+using IssueManage.Pages.Entity;
+using IssueManage.Pages.Issues;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
-namespace Element.Admin.Dtos
+namespace IssueManage.Pages.Dtos
 {
     public class IssueProfile : Profile
     {
         public IssueProfile()
         {
-            CreateMap<IssueModel, Entity.Issue>()
+            CreateMap<IssueModel, Issue>()
                 .ForMember(d => d.Id, s => s.MapFrom(s => s.Id))
                 .ForMember(d => d.CreateTime, s => s.MapFrom(s => s.CreateTime))
                 .ForMember(d => d.ImplementTime, s => s.MapFrom(s => s.ImplementTime))

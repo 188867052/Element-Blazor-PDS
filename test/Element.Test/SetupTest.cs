@@ -1,24 +1,19 @@
 ﻿using Admin.ServerRender;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;
 using PuppeteerSharp;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class SetupTest : TestBase, IDisposable
     {
-        static System.Threading.SemaphoreSlim InitilizeSemaphoreSlim = new System.Threading.SemaphoreSlim(1, 1);
+        static SemaphoreSlim InitilizeSemaphoreSlim = new SemaphoreSlim(1, 1);
         protected static SemaphoreSlim TestSemaphoreSlim = new SemaphoreSlim(1, 1);
         private bool initilized = false;
         private IHostBuilder hostBuilder;
@@ -69,7 +64,7 @@ namespace Element.Test
                 }
                 Output.WriteLine("启动服务器");
                 hostBuilder = Program.CreateHostBuilder(new string[0]);
-                source = new System.Threading.CancellationTokenSource();
+                source = new CancellationTokenSource();
                 var host = hostBuilder.Build();
                 _ = host.RunAsync(source.Token);
                 demoTesterTypes = AppDomain.CurrentDomain.GetAssemblies()

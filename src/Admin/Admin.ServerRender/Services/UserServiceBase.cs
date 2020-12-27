@@ -1,5 +1,4 @@
-﻿using Element.Admin.Abstract;
-using Element;
+﻿using Element;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
-using Element.Admin.Entity;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Entity;
+using IssueManage.Pages.Role;
+using IssueManage.Pages.User;
 
 namespace Element.Admin.ServerRender
 {

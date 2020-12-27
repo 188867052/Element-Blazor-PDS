@@ -1,11 +1,14 @@
-﻿using Element.Admin.Abstract;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using Element.Admin.Meetings;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Enum;
+using IssueManage.Pages.Meetings;
+using Element;
+using Element.Admin;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Meetings
 {
     public class BMeetingManageBase : BAdminPageBase
     {

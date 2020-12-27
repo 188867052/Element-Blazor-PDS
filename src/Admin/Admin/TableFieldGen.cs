@@ -1,4 +1,4 @@
-﻿namespace Element.Admin
+﻿namespace IssueManage.Pages
 {
     public class TableFieldGen
     {

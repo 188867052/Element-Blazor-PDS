@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Element.Admin.Entity
+namespace IssueManage.Pages.Entity
 {
     public class Product
     {
@@ -9,5 +9,5 @@ namespace Element.Admin.Entity
         public string Description { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime UpdateTime { get; set; }
-    } 
+    }
 }

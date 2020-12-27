@@ -1,13 +1,8 @@
-using System;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
-
-using PuppeteerSharp;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class TabTest : SetupTest
     {
@@ -33,7 +28,7 @@ namespace Element.Test
 
         private async Task TestCaseAsync(string name)
         {
-            await TestCaseAsync("Tabs ±Í«©“≥", name); 
+            await TestCaseAsync("Tabs ±Í«©“≥", name);
         }
 
         [Fact]

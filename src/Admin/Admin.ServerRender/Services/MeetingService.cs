@@ -1,5 +1,5 @@
-﻿using Element.Admin.Abstract;
-using Element.Admin.Entity;
+﻿using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

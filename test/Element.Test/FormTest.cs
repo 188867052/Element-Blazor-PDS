@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class FormTest : SetupTest
     {

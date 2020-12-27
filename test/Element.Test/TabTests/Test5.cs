@@ -1,12 +1,10 @@
 ﻿using PuppeteerSharp;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.TabTests
+namespace IssueManage.Test.TabTests
 {
     [TestName("Tabs 标签页", "调用事件API实现可编辑的标签页")]
     public class Test5 : TestBase, IDemoTester

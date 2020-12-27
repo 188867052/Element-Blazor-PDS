@@ -1,11 +1,13 @@
-﻿using Element.Admin.Abstract;
-using Element.Admin.Setting.Product;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Enum;
+using Element;
+using Element.Admin;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Setting.Product
 {
     public class BProductManageBase : BAdminPageBase
     {
@@ -40,7 +42,7 @@ namespace Element.Admin
             Models = (await ProductService.GetAll()).Select(o => new ProductModel
             {
                 Id = o.Id,
-                Description=o.Description,
+                Description = o.Description,
                 Name = o.Name,
                 CreateTime = o.CreateTime,
             }).ToList();

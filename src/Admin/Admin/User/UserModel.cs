@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Element;
+using System.Collections.Generic;
 
-namespace Element.Admin
+namespace IssueManage.Pages.User
 {
     public class UserModel
     {

@@ -1,8 +1,10 @@
-﻿using Element.Admin.Role;
+﻿using Element;
+using Element.Admin;
+using IssueManage.Pages.Enum;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Role
 {
     public class BRoleManagementBase : BAdminPageBase
     {

@@ -1,8 +1,10 @@
-﻿using Element.Admin.Abstract;
+﻿using Element;
+using Element.Admin;
+using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Meetings
 {
     public class BMeetingEditBase : BAdminPageBase
     {

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Element;
+using IssueManage.Pages.Enum;
+using System;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Issues
 {
     public class IssueModel
     {

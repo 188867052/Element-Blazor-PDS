@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Element.Admin.ServerRender;
 using AutoMapper;
-using Element.Admin.Abstract;
+using IssueManage.Pages.Abstract;
 
 namespace Admin.ServerRender
 {

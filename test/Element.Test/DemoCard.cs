@@ -1,9 +1,6 @@
 ﻿using PuppeteerSharp;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Element.Test
+namespace IssueManage.Test
 {
     public class DemoCard
     {

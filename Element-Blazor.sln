@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin.ClientRender"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Web", "src\Samples\Admin\Blazui.Admin.Sample.ServerRender\IssueManage.Web.csproj", "{EE404089-CDFB-4699-9997-8166D6B3A6DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Element.Admin", "src\Admin\Admin\Element.Admin.csproj", "{36BBE899-CF01-4ECF-B4F4-627D63531005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Pages", "src\Admin\Admin\IssueManage.Pages.csproj", "{36BBE899-CF01-4ECF-B4F4-627D63531005}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Test", "test\Element.Test\IssueManage.Test.csproj", "{D9F69E27-BF1F-4088-AD24-5961B09F9D32}"
 EndProject

@@ -1,12 +1,10 @@
 ﻿using PuppeteerSharp;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.TabTests
+namespace IssueManage.Test.TabTests
 {
     [TestName("Tabs 标签页", "基础的、简洁的标签页")]
     public class NormalTabTest : IDemoTester
@@ -69,7 +67,7 @@ namespace Element.Test.TabTests
             var activeBoxModel = await activeTab.BoundingBoxAsync();
             Assert.NotNull(activeBoxModel);
             var barOffsetLeft = await activeTab.EvaluateFunctionAsync<float>("x=>x.offsetLeft+parseFloat(window.getComputedStyle(x).paddingLeft)");
-            var shadowBoxWidth = Math.Round(shadowBoxModel.Width + 20 + ((index == 0 || index == tabHeaders.Length - 1) ? 0 : 20), 2);
+            var shadowBoxWidth = Math.Round(shadowBoxModel.Width + 20 + (index == 0 || index == tabHeaders.Length - 1 ? 0 : 20), 2);
             Assert.Equal(activeBoxModel.Width, shadowBoxWidth);
             var styleHandle = await shadow.GetPropertyAsync("style");
             var width = await styleHandle.EvaluateFunctionAsync<string>("s=>s.width");

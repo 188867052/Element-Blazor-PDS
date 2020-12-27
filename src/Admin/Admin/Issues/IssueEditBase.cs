@@ -1,10 +1,12 @@
-﻿using Element.Admin.Abstract;
+﻿using Element;
+using Element.Admin;
+using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Issues
 {
     public class IssueEditBase : BAdminPageBase
     {
@@ -41,7 +43,7 @@ namespace Element.Admin
                 await IssueService.UpdateAsync(Model);
                 Toast("更新问题成功！");
             }
-           
+
             await DialogService.CloseDialogAsync(this, (object)null);
         }
     }

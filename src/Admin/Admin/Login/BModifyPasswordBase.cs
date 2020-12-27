@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Element;
+using Element.Admin;
+using IssueManage.Pages.Enum;
+using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Login
 {
     public class BModifyPasswordBase : BAdminPageBase
     {
@@ -18,7 +21,7 @@ namespace Element.Admin
         [Parameter]
         public DialogOption Dialog { get; set; }
 
-        public virtual async System.Threading.Tasks.Task ModifyAsync()
+        public virtual async Task ModifyAsync()
         {
             if (!form.IsValid())
             {

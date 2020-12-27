@@ -1,8 +1,9 @@
-﻿using Element.Admin.Entity;
+﻿using IssueManage.Pages.Entity;
+using IssueManage.Pages.Setting.Product;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Element.Admin.Abstract
+namespace IssueManage.Pages.Abstract
 {
     public interface IProductService : ITransientService
     {

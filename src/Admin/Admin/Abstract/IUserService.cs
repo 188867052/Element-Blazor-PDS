@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Element;
+using IssueManage.Pages.Role;
+using IssueManage.Pages.User;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Element.Admin.Abstract
+namespace IssueManage.Pages.Abstract
 {
     public interface IUserService
     {

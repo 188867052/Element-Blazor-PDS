@@ -1,6 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Element.Admin;
+using System.ComponentModel;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Enum
 {
     [Resources]
     public enum AdminResources

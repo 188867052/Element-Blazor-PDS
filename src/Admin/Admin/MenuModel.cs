@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     public class MenuModel
     {

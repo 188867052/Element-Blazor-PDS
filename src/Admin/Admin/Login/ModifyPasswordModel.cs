@@ -1,4 +1,4 @@
-﻿namespace Element.Admin
+﻿namespace IssueManage.Pages.Login
 {
     internal class ModifyPasswordModel
     {

@@ -1,12 +1,12 @@
-﻿using PuppeteerSharp;
+﻿using IssueManage.Test;
+using PuppeteerSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.CheckBoxTests
+namespace IssueManage.Test.CheckBoxTests
 {
     [TestName("Checkbox 多选框", "复选框组")]
     public class Test2 : IDemoTester

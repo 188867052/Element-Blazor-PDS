@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using IssueManage.Pages.Login;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
 

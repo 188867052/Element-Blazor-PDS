@@ -1,4 +1,5 @@
-﻿using Element.Admin.Login;
+﻿using Element;
+using Element.Admin;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Login
 {
     public class BAdminBase : BAdminPageBase
     {
@@ -79,7 +80,7 @@ namespace Element.Admin
 
         internal async Task ModifyPasswordAsync()
         {
-            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>((ModifyPasswordPage ?? typeof(BModifyPassword)), "修改密码", 500);
+            var result = await DialogService.ShowDialogAsync<ModifyPasswordModel>(ModifyPasswordPage ?? typeof(BModifyPassword), "修改密码", 500);
             if (result.Result == null)
             {
                 return;

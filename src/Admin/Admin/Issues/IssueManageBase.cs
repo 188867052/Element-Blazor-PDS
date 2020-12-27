@@ -1,13 +1,17 @@
 ﻿using AutoMapper;
-using Element.Admin.Abstract;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Element.Admin.Extension;
-using Element.Admin.Issues;
+using IssueManage.Pages.Framework.Extension;
+using IssueManage.Pages.Abstract;
+using IssueManage.Pages.Framework.Extension;
+using IssueManage.Pages.Entity;
+using IssueManage.Pages.Enum;
+using Element;
+using Element.Admin;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Issues
 {
     public class IssueManageBase : BAdminPageBase
     {
@@ -43,7 +47,7 @@ namespace Element.Admin
             if (table == null) return;
 
             var issues = await IssueService.GetAll();
-            Models = mapper.Map<Entity.Issue, IssueModel>(issues).ToList();
+            Models = mapper.Map<Issue, IssueModel>(issues).ToList();
 
             table.MarkAsRequireRender();
             RequireRender = true;

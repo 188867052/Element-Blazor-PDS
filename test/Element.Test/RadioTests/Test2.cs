@@ -1,11 +1,9 @@
 ﻿using PuppeteerSharp;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Element.Test.RadioTests
+namespace IssueManage.Test.RadioTests
 {
     [TestName("Radio 单选框", "禁用状态")]
     public class Test2 : IDemoTester

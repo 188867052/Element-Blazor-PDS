@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Element;
+using Element.Admin;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Role
 {
     public class BRoleEditBase : BAdminPageBase
     {

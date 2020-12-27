@@ -1,8 +1,9 @@
-﻿using Element.Admin.Entity;
+﻿using Element.Admin;
+using IssueManage.Pages.Entity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Element.Admin.Abstract
+namespace IssueManage.Pages.Abstract
 {
     public interface IMeetingService
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Enum
 {
     public enum IssueStatus
     {

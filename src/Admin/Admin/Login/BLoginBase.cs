@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Element;
+using Element.Admin;
+using Microsoft.AspNetCore.Components;
 
-namespace Element.Admin
+namespace IssueManage.Pages.Login
 {
     public class BLoginBase : BAdminPageBase
     {

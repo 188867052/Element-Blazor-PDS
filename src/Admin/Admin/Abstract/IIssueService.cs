@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using IssueManage.Pages.Entity;
+using IssueManage.Pages.Issues;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Element.Admin.Abstract
+namespace IssueManage.Pages.Abstract
 {
     public interface IIssueService
     {
         Task AddAsync(IssueModel model);
         Task DeleteAsync(int id);
         Task UpdateAsync(IssueModel model);
-        Task<List<Entity.Issue>> GetAll();
+        Task<List<Issue>> GetAll();
     }
 }
