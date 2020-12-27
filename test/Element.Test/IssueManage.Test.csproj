@@ -22,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Admin\Admin.ClientRender\Element.Admin.ClientRender.csproj" />
     <ProjectReference Include="..\..\src\IssueManage.Web\IssueManage.Web.csproj" />
-    <ProjectReference Include="..\..\src\Samples\Blazui\Blazui.ClientRender\Element.ClientRender.csproj" />
   </ItemGroup>
 
 </Project>

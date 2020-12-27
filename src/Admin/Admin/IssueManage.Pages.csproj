@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Components\Element.csproj" />
-    <ProjectReference Include="..\..\Markdown\Element.Markdown.csproj" />
   </ItemGroup>
 
 </Project>
