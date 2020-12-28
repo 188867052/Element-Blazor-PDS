@@ -21,11 +21,11 @@ namespace IssueManage.Services
             this.mapper = mapper;
         }
 
-        public async Task AddAsync(IssueModel model)
+        public async Task AddAsync(IssueEditModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
 
-            var issue = mapper.Map<IssueModel, Issue>(model);
+            var issue = mapper.Map<IssueEditModel, Issue>(model);
             issue.CreateTime = DateTime.Now;
             issue.UpdateTime = DateTime.Now;
             dbContext.Set<Issue>().Add(issue);
@@ -46,7 +46,7 @@ namespace IssueManage.Services
             return dbContext.Set<Issue>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(IssueModel model)
+        public async Task UpdateAsync(IssueEditModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
             var entity = dbContext.Set<Issue>().Find(model.Id);

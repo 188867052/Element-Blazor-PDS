@@ -11,7 +11,7 @@ namespace IssueManage.Pages.Issues
         private bool isCreate = false;
 
         [Parameter]
-        public IssueModel Model { get; set; }
+        public IssueEditModel Model { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }
@@ -29,7 +29,7 @@ namespace IssueManage.Pages.Issues
         {
             if (!form.IsValid()) return;
 
-            Model = form.GetValue<IssueModel>();
+            Model = form.GetValue<IssueEditModel>();
             if (isCreate)
             {
                 await IssueService.AddAsync(Model);

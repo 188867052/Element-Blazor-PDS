@@ -9,14 +9,14 @@
             <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
         </BButtonGroup>
     }
-    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueModel.Id)}" HasSelectionColumn="false">
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueListModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
             @if (CanUpdate || CanDelete)
             {
                 <BTableTemplateColumn Text="操作" Context="model">
                     @if (CanUpdate)
                     {
-                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
+                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(((IssueListModel)model).Id))">编辑</BButton>
                     }
                     @if (CanDelete)
                     {

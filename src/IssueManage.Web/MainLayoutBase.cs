@@ -27,11 +27,11 @@ namespace Admin.ServerRender
                          Icon="el-icon-s-promotion",
                          Route="/issue"
                     },
-                    new MenuModel(){
-                         Label="问题状态表",
-                         Icon="el-icon-cpu",
-                         Route="/issue1"
-                    }
+                    //new MenuModel(){
+                    //     Label="问题状态表",
+                    //     Icon="el-icon-cpu",
+                    //     Route="/issue1"
+                    //}
                 }
             });
 
@@ -46,32 +46,32 @@ namespace Admin.ServerRender
                          Icon="el-icon-cpu",
                          Route="/meeting"
                     },
-                    new MenuModel(){
-                         Label="发起会议",
-                         Icon="el-icon-cpu",
-                         Route="/meeting1"
-                    }
+                    //new MenuModel(){
+                    //     Label="发起会议",
+                    //     Icon="el-icon-cpu",
+                    //     Route="/meeting1"
+                    //}
                 }
             });
 
-            Menus.Add(new MenuModel()
-            {
-                Label = "设置",
-                Icon = "el-icon-setting",
-                Children = new List<MenuModel>()
-                {
-                    new MenuModel(){
-                         Label="客户管理",
-                         Icon="el-icon-s-custom",
-                         Route="/customer"
-                    },
-                    new MenuModel(){
-                         Label="产品管理",
-                         Icon="el-icon-s-management",
-                         Route="/product"
-                    }
-                }
-            });
+            //Menus.Add(new MenuModel()
+            //{
+            //    Label = "设置",
+            //    Icon = "el-icon-setting",
+            //    Children = new List<MenuModel>()
+            //    {
+            //        new MenuModel(){
+            //             Label="客户管理",
+            //             Icon="el-icon-s-custom",
+            //             Route="/customer"
+            //        },
+            //        new MenuModel(){
+            //             Label="产品管理",
+            //             Icon="el-icon-s-management",
+            //             Route="/product"
+            //        }
+            //    }
+            //});
         }
     }
 }

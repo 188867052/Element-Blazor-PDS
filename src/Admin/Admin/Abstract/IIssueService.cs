@@ -7,9 +7,9 @@ namespace IssueManage.Pages.Abstract
 {
     public interface IIssueService
     {
-        Task AddAsync(IssueModel model);
+        Task AddAsync(IssueEditModel model);
         Task DeleteAsync(int id);
-        Task UpdateAsync(IssueModel model);
+        Task UpdateAsync(IssueEditModel model);
         Task<List<Issue>> GetAll();
     }
 }
