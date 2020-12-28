@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     /// <summary>
     /// 当用户操作引发业务异常时触发，异常消息将显示给用户

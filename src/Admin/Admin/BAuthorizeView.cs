@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     public class BAuthorizeView : AuthorizeView
     {

@@ -1,4 +1,4 @@
-﻿using IssueManage.Pages.Enum;
+﻿using IssueManage.Pages.Enums;
 using System;
 
 namespace IssueManage.Pages.Entity

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     /// <summary>
     /// 该特性将枚举识别为资源集合，如果在组件中使用了 <seealso cref="ResourceAttribute"/> 特性声明资源，则无需再通过此方法来声明

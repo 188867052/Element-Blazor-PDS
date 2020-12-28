@@ -1,4 +1,5 @@
 ﻿using Element.Admin;
+using IssueManage.Pages;
 using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;

@@ -1,12 +1,12 @@
-﻿using IssueManage.Pages.Abstract;
+﻿using Element;
+using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     public class BAdminPageBase : BComponentBase
     {

@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using IssueManage.Pages.Entity;
 using IssueManage.Pages.Issues;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 namespace IssueManage.Pages.Dtos
 {
     public class IssueProfile : Profile

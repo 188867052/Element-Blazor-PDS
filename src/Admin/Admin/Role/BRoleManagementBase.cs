@@ -1,6 +1,5 @@
 ﻿using Element;
-using Element.Admin;
-using IssueManage.Pages.Enum;
+using IssueManage.Pages.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

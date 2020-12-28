@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Enum;
 using Element;
-using Element.Admin;
+using IssueManage.Pages.Enums;
 
 namespace IssueManage.Pages.Setting.Product
 {

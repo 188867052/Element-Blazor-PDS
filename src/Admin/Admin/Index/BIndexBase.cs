@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using AntDesign.Charts;
 using System;
 using IssueManage.Pages.Abstract;
-using Element.Admin;
 using IssueManage.Pages.Setting.Product;
 
 namespace IssueManage.Pages.Index

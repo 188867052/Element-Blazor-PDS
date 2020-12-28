@@ -1,6 +1,5 @@
 ﻿using Element;
-using Element.Admin;
-using IssueManage.Pages.Enum;
+using IssueManage.Pages.Enums;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 

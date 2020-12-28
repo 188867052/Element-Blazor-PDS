@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 using IssueManage.Pages.Framework.Extension;
 using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Entity;
-using IssueManage.Pages.Enum;
 using Element;
-using Element.Admin;
+using IssueManage.Pages.Enums;
 
 namespace IssueManage.Pages.Issues
 {
-    public class IssueManageBase : BAdminPageBase
+    public class IssueListBase : BAdminPageBase
     {
         protected List<IssueModel> Models { get; private set; } = new List<IssueModel>();
         internal bool CanCreate { get; private set; }

@@ -1,9 +1,6 @@
 ﻿using Element;
-using Element.Admin;
 using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace IssueManage.Pages.Issues

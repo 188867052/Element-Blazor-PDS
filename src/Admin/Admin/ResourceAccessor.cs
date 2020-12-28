@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Element.Admin
+namespace IssueManage.Pages
 {
     public class ResourceAccessor
     {
