@@ -3,27 +3,15 @@
 @attribute [Resource("issueList", "问题列表")]
 @using Element
 <BAuthorizeView Roles="@Roles">
-    @if (CanCreate)
-    {
-        <BButtonGroup>
-            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
-        </BButtonGroup>
-    }
+    <BButtonGroup>
+        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
+    </BButtonGroup>
     <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
-            @if (CanUpdate || CanDelete)
-            {
-                <BTableTemplateColumn Text="操作" Context="model">
-                    @if (CanUpdate)
-                    {
-                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
-                    }
-                    @if (CanDelete)
-                    {
-                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
-                    }
-                </BTableTemplateColumn>
-            }
+            <BTableTemplateColumn Text="操作" Context="model">
+                <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
+                <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
+            </BTableTemplateColumn>
         </BTableColumns>
     </BTable>
 </BAuthorizeView>

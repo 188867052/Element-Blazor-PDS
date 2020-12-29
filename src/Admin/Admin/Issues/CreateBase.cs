@@ -1,19 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using IssueManage.Pages.Framework.Extension;
 using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Entity;
 using Element;
 
 namespace IssueManage.Pages.Issues
 {
-    public class IssueListBase : BAdminPageBase
+    public class CreateBase : BAdminPageBase
     {
-        protected List<IssueModel> Models { get; private set; } = new List<IssueModel>();
-
         [Inject]
         public IIssueService IssueService { get; set; }
 
@@ -27,30 +21,13 @@ namespace IssueManage.Pages.Issues
             await base.OnInitializedAsync();
         }
 
-        public async Task CreateAsync()
-        {
-            await DialogService.ShowDialogAsync<IssueEdit>("创建问题", 800, new Dictionary<string, object>());
-            await RefreshAsync();
-        }
-
         private async Task RefreshAsync()
         {
             if (table == null) return;
 
-            var issues = await IssueService.GetAll();
-            Models = mapper.Map<Issue, IssueModel>(issues).ToList();
-
             table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();
-        }
-
-        public async Task EditAsync(object model)
-        {
-            var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(IssueEdit.Model), model);
-            await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
-            await RefreshAsync();
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -61,11 +38,10 @@ namespace IssueManage.Pages.Issues
             await RefreshAsync();
         }
 
-        public async Task Delete(object user)
+        public async Task SubmitAsync()
         {
             if (await ConfirmAsync("确认删除该问题？") != MessageBoxResult.Ok) return;
 
-            await IssueService.DeleteAsync(((IssueModel)user).Id);
             Toast("删除问题成功！");
             await RefreshAsync();
         }

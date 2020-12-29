@@ -28,9 +28,9 @@ namespace Admin.ServerRender
                          Route="/issue"
                     },
                     new MenuModel(){
-                         Label="问题状态表",
+                         Label="新建问题",
                          Icon="el-icon-cpu",
-                         Route="/issue1"
+                         Route="/issue/create"
                     }
                 }
             });

@@ -1,0 +1,14 @@
+﻿@page "/issue/create"
+@inherits CreateBase
+@attribute [Resource("issueList", "新建问题")]
+@using Element
+<BAuthorizeView Roles="@Roles">
+    <BForm>
+        <BFormItem IsRequired="true" TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
+            <BInput TValue="string"></BInput>
+        </BFormItem>
+        <BFormActionItem Style="text-align:center">
+            <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
+        </BFormActionItem>
+    </BForm>
+</BAuthorizeView>
