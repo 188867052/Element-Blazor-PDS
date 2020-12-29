@@ -57,8 +57,20 @@ namespace IssueManage.Pages.Issues
         {
             if (!form.IsValid()) return;
 
-            var model = form.GetValue<IssueModel>();
+            var model = form.GetValue<IssueSearchModel>();
             Models = Models.Where(o => o.Description.ToLower().Contains(model.Description.ToLower()));
+            if (model.Status.HasValue)
+            {
+                Models = Models.Where(o => o.Status == model.Status);
+            }
+            if (model.StartCreateTime.HasValue)
+            {
+                Models = Models.Where(o => o.CreateTime >= model.StartCreateTime);
+            }
+            if (model.EndCreateTime.HasValue)
+            {
+                Models = Models.Where(o => o.CreateTime <= model.EndCreateTime);
+            }
             await RefreshAsync();
         }
 

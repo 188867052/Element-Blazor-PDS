@@ -8,6 +8,8 @@ namespace IssueManage.Pages.Issues
 {
     public class CreateBase : BAdminPageBase
     {
+        internal BForm form;
+
         [Inject]
         public IIssueService IssueService { get; set; }
 

@@ -4,17 +4,17 @@
 @using Element
 <BAuthorizeView Roles="@Roles">
     <BForm Inline="true" @ref="form">
-        <BFormItem TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
+        <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
             <BInput TValue="string"></BInput>
         </BFormItem>
-        <BFormItem TValue="string" Label="状态" Name="@nameof(IssueModel.Status)">
+        <BFormItem TValue="string" Label="状态" Name="@nameof(IssueSearchModel.Status)">
             <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
         </BFormItem>
-        <BFormItem TValue="DateTime" Label="发起时间" Name="@nameof(IssueModel.CreateTime)">
-            <BDatePicker Placeholder="开始时间"></BDatePicker>
+        <BFormItem TValue="DateTime" Label="发起时间">
+            <BDatePicker Placeholder="开始时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
             <span class="el-range-separator">至</span>
-            <BDatePicker Placeholder="结束时间"></BDatePicker>
-        </BFormItem> 
+            <BDatePicker Placeholder="结束时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
+        </BFormItem>
         <BFormActionItem Style="text-align:center">
             <BButton Type="ButtonType.Primary" OnClick="SearchAsync">搜索</BButton>
         </BFormActionItem>

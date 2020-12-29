@@ -3,10 +3,51 @@
 @attribute [Resource("issueList", "新建问题")]
 @using Element
 <BAuthorizeView Roles="@Roles">
-    <BForm Inline="true">
-        <BFormItem IsRequired="true" TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
-            <BInput TValue="string"></BInput>
-        </BFormItem>
+    <BForm @ref="form">
+        <div class="el-row" style="margin-left: -10px; margin-right: -10px;">
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="状态" Name="@nameof(IssueSearchModel.Status)">
+                    <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="DateTime" Label="发起时间">
+                    <BDatePicker Placeholder="开始时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
+                    <span class="el-range-separator">至</span>
+                    <BDatePicker Placeholder="结束时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-24" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="ele-form-btns el-col el-col-24" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+        </div>
         <BFormActionItem Style="text-align:center">
             <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
         </BFormActionItem>
