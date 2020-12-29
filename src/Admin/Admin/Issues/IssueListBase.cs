@@ -12,7 +12,8 @@ namespace IssueManage.Pages.Issues
 {
     public class IssueListBase : BAdminPageBase
     {
-        protected List<IssueModel> Models { get; private set; } = new List<IssueModel>();
+        internal BForm form;
+        protected IEnumerable<IssueModel> Models { get; private set; } = new List<IssueModel>();
 
         [Inject]
         public IIssueService IssueService { get; set; }
@@ -24,6 +25,8 @@ namespace IssueManage.Pages.Issues
 
         protected override async Task OnInitializedAsync()
         {
+            var issues = await IssueService.GetAll();
+            Models = mapper.Map<Issue, IssueModel>(issues).ToList();
             await base.OnInitializedAsync();
         }
 
@@ -37,9 +40,6 @@ namespace IssueManage.Pages.Issues
         {
             if (table == null) return;
 
-            var issues = await IssueService.GetAll();
-            Models = mapper.Map<Issue, IssueModel>(issues).ToList();
-
             table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();
@@ -50,6 +50,15 @@ namespace IssueManage.Pages.Issues
             var parameters = new Dictionary<string, object>();
             parameters.Add(nameof(IssueEdit.Model), model);
             await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
+            await RefreshAsync();
+        }
+
+        public async Task SearchAsync()
+        {
+            if (!form.IsValid()) return;
+
+            var model = form.GetValue<IssueModel>();
+            Models = Models.Where(o => o.Description.ToLower().Contains(model.Description.ToLower()));
             await RefreshAsync();
         }
 

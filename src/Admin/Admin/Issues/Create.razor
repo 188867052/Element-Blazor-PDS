@@ -3,7 +3,7 @@
 @attribute [Resource("issueList", "新建问题")]
 @using Element
 <BAuthorizeView Roles="@Roles">
-    <BForm>
+    <BForm Inline="true">
         <BFormItem IsRequired="true" TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
             <BInput TValue="string"></BInput>
         </BFormItem>
