@@ -7,6 +7,9 @@
         <BFormItem TValue="string" Label="描述" Name="@nameof(IssueModel.Description)">
             <BInput TValue="string"></BInput>
         </BFormItem>
+        <BFormItem TValue="string" Label="状态" Name="@nameof(IssueModel.Status)">
+            <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
+        </BFormItem>
         <BFormItem TValue="DateTime" Label="发起时间" Name="@nameof(IssueModel.CreateTime)">
             <BDatePicker></BDatePicker>
         </BFormItem>
