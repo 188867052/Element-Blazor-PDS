@@ -11,8 +11,10 @@
             <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
         </BFormItem>
         <BFormItem TValue="DateTime" Label="发起时间" Name="@nameof(IssueModel.CreateTime)">
-            <BDatePicker></BDatePicker>
-        </BFormItem>
+            <BDatePicker Placeholder="开始时间"></BDatePicker>
+            <span class="el-range-separator">至</span>
+            <BDatePicker Placeholder="结束时间"></BDatePicker>
+        </BFormItem> 
         <BFormActionItem Style="text-align:center">
             <BButton Type="ButtonType.Primary" OnClick="SearchAsync">搜索</BButton>
         </BFormActionItem>
