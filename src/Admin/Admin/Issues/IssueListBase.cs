@@ -32,8 +32,7 @@ namespace IssueManage.Pages.Issues
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<IssueEdit>("创建问题", 800, new Dictionary<string, object>());
-            await RefreshAsync();
+            await JSRuntime.HrefBlank("/issue/create");
         }
 
         private async Task RefreshAsync()
