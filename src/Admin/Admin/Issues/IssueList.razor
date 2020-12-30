@@ -20,7 +20,6 @@
         </BFormActionItem>
     </BForm>
     <BButtonGroup>
-        <a href="/issue/create" target="_blank">Create</a>
         <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
     </BButtonGroup>
     <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueModel.Id)}" HasSelectionColumn="false">

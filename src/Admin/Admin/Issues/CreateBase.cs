@@ -16,8 +16,6 @@ namespace IssueManage.Pages.Issues
         [Inject]
         public IMapper mapper { get; set; }
 
-        protected BTable table;
-
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
@@ -25,9 +23,6 @@ namespace IssueManage.Pages.Issues
 
         private async Task RefreshAsync()
         {
-            if (table == null) return;
-
-            table.MarkAsRequireRender();
             RequireRender = true;
             StateHasChanged();
         }
@@ -44,9 +39,7 @@ namespace IssueManage.Pages.Issues
 
         public async Task SubmitAsync()
         {
-            if (await ConfirmAsync("确认删除该问题？") != MessageBoxResult.Ok) return;
-
-            Toast("删除问题成功！");
+            if (!form.IsValid()) return;
             await RefreshAsync();
         }
     }
