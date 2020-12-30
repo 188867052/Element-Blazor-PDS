@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Element
 {
-    public static class ElementExtension
+    public static class JSRuntimeExtension
     {
         public static ElementHelper Dom(this ElementReference elementReference, IJSRuntime jSRuntime)
         {
@@ -22,10 +22,16 @@ namespace Element
             return jSRuntime;
         }
 
-        public static async Task<IJSRuntime> HrefBlank(this IJSRuntime jSRuntime, string url)
+        public static async Task<IJSRuntime> HrefBlankAsync(this IJSRuntime jSRuntime, string url)
         {
             await jSRuntime.InvokeAsync<object>("window.open", url, "_blank");
             return jSRuntime;
         }
+
+        public static async Task<IJSRuntime> HideByIdAsync(this IJSRuntime jSRuntime, string id)
+        {
+            await jSRuntime.InvokeAsync<object>($"hideById", id);
+            return jSRuntime;
+        } 
     }
 }

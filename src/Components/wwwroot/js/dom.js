@@ -39,6 +39,9 @@ window.clear = function (el) {
     }
     el.value = null;
 };
+window.hideById = function (id) {
+    document.getElementById(id).style.display="none";
+};
 
 async function executePasteUpload(event) {
     var items = event.clipboardData && event.clipboardData.items;

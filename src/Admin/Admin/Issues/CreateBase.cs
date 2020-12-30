@@ -35,6 +35,8 @@ namespace IssueManage.Pages.Issues
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
+            await JSRuntime.HideByIdAsync("el-tabs__nav-scroll");
+
             if (!firstRender) return;
 
             await RefreshAsync();

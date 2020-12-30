@@ -32,7 +32,7 @@ namespace IssueManage.Pages.Issues
 
         public async Task CreateAsync()
         {
-            await JSRuntime.HrefBlank("/issue/create");
+            await JSRuntime.HrefBlankAsync("/issue/create");
         }
 
         private async Task RefreshAsync()
