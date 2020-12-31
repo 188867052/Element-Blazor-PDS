@@ -22,7 +22,7 @@
     <BButtonGroup>
         <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建问题</BButton>
     </BButtonGroup>
-    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueModel.Id)}" HasSelectionColumn="false">
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueGridModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
             <BTableTemplateColumn Text="操作" Context="model">
                 <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>

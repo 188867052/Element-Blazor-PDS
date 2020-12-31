@@ -30,7 +30,7 @@ namespace Admin.ServerRender
                     new MenuModel(){
                          Label="新建问题",
                          Icon="el-icon-cpu",
-                         Route="/issue/create"
+                         Route="/issue/edit"
                     }
                 }
             });

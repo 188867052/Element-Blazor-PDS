@@ -1,39 +1,39 @@
-﻿@page "/issue/create"
-@inherits CreateBase
-@attribute [Resource("issueList", "新建问题")]
+﻿@page "/issue/edit"
+@inherits EditBase
+@attribute [Resource("issueCreate", "新建问题")]
 @using Element
 <BAuthorizeView Roles="@Roles">
     <BForm @ref="form">
         <h3>问题简介</h3>
         <div class="el-row" style="margin-left: 50px; margin-right: 150px;">
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="string" Label="发起人" Name="@nameof(IssueSearchModel.Description)">
+                <BFormItem IsRequired="true" TValue="string" Label="发起人" Name="@nameof(IssueEditModel.Description)">
                     <BInput TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="string" Label="编号" Name="@nameof(IssueSearchModel.Status)">
+                <BFormItem IsRequired="true" TValue="IssueManage.Pages.Enums.IssueStatus" Label="编号" Name="@nameof(IssueEditModel.Status)">
                     <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem IsRequired="true" TValue="DateTime" Label="打开日期">
-                    <BDatePicker Placeholder="打开日期" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
+                    <BDatePicker Placeholder="打开日期" Name="@nameof(IssueEditModel.CreateTime)"></BDatePicker>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-16" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="string" Label="问题描述" Name="@nameof(IssueSearchModel.Description)">
+                <BFormItem IsRequired="true" TValue="string" Label="问题描述" Name="@nameof(IssueEditModel.Description)">
                     <BInput Type="InputType.Textarea" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="string" Label="严重度" Name="@nameof(IssueSearchModel.Status)">
-                    <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
+                <BFormItem IsRequired="true" TValue="IssueManage.Pages.Enums.IssueLevel" Label="严重度" Name="@nameof(IssueEditModel.Level)">
+                    <BSelect TValue="IssueManage.Pages.Enums.IssueLevel"></BSelect>
                 </BFormItem>
             </div>
         </div>
 
-        <div class="el-divider el-divider--horizontal"><!----></div>
+        <div class="el-divider el-divider--horizontal"></div>
         <BFormActionItem Style="text-align:center">
             <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">确定</BButton>
         </BFormActionItem>

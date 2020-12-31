@@ -4,7 +4,7 @@ using System;
 
 namespace IssueManage.Pages.Issues
 {
-    public class IssueModel
+    public class IssueGridModel
     {
         public int Id { get; set; }
 

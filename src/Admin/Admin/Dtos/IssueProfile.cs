@@ -7,7 +7,7 @@ namespace IssueManage.Pages.Dtos
     {
         public IssueProfile()
         {
-            CreateMap<IssueModel, Issue>()
+            CreateMap<IssueGridModel, Issue>()
                 .ForMember(d => d.Id, s => s.MapFrom(s => s.Id))
                 .ForMember(d => d.CreateTime, s => s.MapFrom(s => s.CreateTime))
                 .ForMember(d => d.ImplementTime, s => s.MapFrom(s => s.ImplementTime))

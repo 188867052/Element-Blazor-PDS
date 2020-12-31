@@ -13,7 +13,7 @@ namespace IssueManage.Pages.Issues
     public class IssueListBase : BAdminPageBase
     {
         internal BForm form;
-        protected IEnumerable<IssueModel> Models { get; private set; } = new List<IssueModel>();
+        protected IEnumerable<IssueGridModel> Models { get; private set; } = new List<IssueGridModel>();
 
         [Inject]
         public IIssueService IssueService { get; set; }
@@ -26,7 +26,7 @@ namespace IssueManage.Pages.Issues
         protected override async Task OnInitializedAsync()
         {
             var issues = await IssueService.GetAll();
-            Models = mapper.Map<Issue, IssueModel>(issues).ToList();
+            Models = mapper.Map<Issue, IssueGridModel>(issues).ToList();
             await base.OnInitializedAsync();
         }
 
@@ -85,7 +85,7 @@ namespace IssueManage.Pages.Issues
         {
             if (await ConfirmAsync("确认删除该问题？") != MessageBoxResult.Ok) return;
 
-            await IssueService.DeleteAsync(((IssueModel)user).Id);
+            await IssueService.DeleteAsync(((IssueGridModel)user).Id);
             Toast("删除问题成功！");
             await RefreshAsync();
         }

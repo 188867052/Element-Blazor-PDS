@@ -6,7 +6,7 @@ using Element;
 
 namespace IssueManage.Pages.Issues
 {
-    public class CreateBase : BAdminPageBase
+    public class EditBase : BAdminPageBase
     {
         internal BForm form;
 
@@ -40,6 +40,8 @@ namespace IssueManage.Pages.Issues
         public async Task SubmitAsync()
         {
             if (!form.IsValid()) return;
+
+            var model = form.GetValue<IssueEditModel>();
             await RefreshAsync();
         }
     }
