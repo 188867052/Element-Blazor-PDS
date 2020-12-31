@@ -6,6 +6,7 @@ using Element.Admin;
 using IssueManage.Pages.Abstract;
 using Admin.ServerRender;
 using IssueManage.Services;
+using IssueManage.Pages.Extension;
 
 namespace IssueManage.Web
 {

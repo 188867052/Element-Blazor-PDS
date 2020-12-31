@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 
-namespace IssueManage.Pages.Framework.Extension
+namespace IssueManage.Pages.Extension
 {
     public static class AutoMapperExtension
     {

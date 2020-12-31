@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IssueManage.Pages.Framework.Extension;
 using IssueManage.Pages.Entity;
 using Element;
 using IssueManage.Services;
+using IssueManage.Pages.Extension;
 
 namespace IssueManage.Pages.Issues
 {
@@ -57,7 +57,10 @@ namespace IssueManage.Pages.Issues
             if (!form.IsValid()) return;
 
             var model = form.GetValue<IssueSearchModel>();
-            Models = Models.Where(o => o.Description.ToLower().Contains(model.Description.ToLower()));
+            if (!string.IsNullOrEmpty(model.Description))
+            {
+                Models = Models.Where(o => o.Description.ToLower().Contains(model.Description.ToLower()));
+            }
             if (model.Status.HasValue)
             {
                 Models = Models.Where(o => o.Status == model.Status);
