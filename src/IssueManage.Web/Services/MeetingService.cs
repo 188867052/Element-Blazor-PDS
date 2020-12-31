@@ -1,13 +1,11 @@
-﻿using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Entity;
-using IssueManage.Pages.Meetings;
+﻿using IssueManage.Pages.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
     public class MeetingService 
     {

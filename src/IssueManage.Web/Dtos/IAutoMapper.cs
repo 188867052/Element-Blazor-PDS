@@ -1,4 +1,4 @@
-﻿namespace IssueManage.Pages.Abstract
+﻿namespace IssueManage
 {
     public interface IAutoMapper
     {

@@ -2,7 +2,7 @@
 using IssueManage.Pages.Enums;
 using System;
 
-namespace IssueManage.Pages.Issues
+namespace IssueManage
 {
     public class IssueGridModel
     {

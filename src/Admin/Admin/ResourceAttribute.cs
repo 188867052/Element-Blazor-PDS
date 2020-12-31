@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IssueManage.Pages
+namespace IssueManage
 {
     /// <summary>
     /// 为组件指定资源名

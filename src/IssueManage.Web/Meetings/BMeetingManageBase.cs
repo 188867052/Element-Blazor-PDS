@@ -5,8 +5,10 @@ using System.Linq;
 using Element;
 using IssueManage.Pages.Enums;
 using IssueManage.Services;
+using IssueManage.Pages;
+using IssueManage.Web.Meetings;
 
-namespace IssueManage.Pages.Meetings
+namespace IssueManage
 {
     public class BMeetingManageBase : BAdminPageBase
     {

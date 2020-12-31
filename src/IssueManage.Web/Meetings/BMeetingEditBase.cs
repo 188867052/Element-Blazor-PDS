@@ -1,9 +1,9 @@
 ﻿using Element;
-using IssueManage.Services;
+using IssueManage.Pages;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Meetings
+namespace IssueManage
 {
     public class BMeetingEditBase : BAdminPageBase
     {

@@ -1,4 +1,5 @@
 ﻿using Element;
+using IssueManage.Pages;
 using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages
+namespace IssueManage
 {
     public class BAdminPageBase : BComponentBase
     {
