@@ -22,6 +22,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Admin\Admin\IssueManage.Pages.csproj" />
-    <ProjectReference Include="..\IssueManage.Services\IssueManage.Services.csproj" />
   </ItemGroup>
 </Project>

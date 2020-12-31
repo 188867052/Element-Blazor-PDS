@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Test", "test\El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Web", "src\IssueManage.Web\IssueManage.Web.csproj", "{A100DD4D-105C-4E21-8D95-B889761E01C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueManage.Services", "src\IssueManage.Services\IssueManage.Services.csproj", "{69B74D09-3CBB-42D8-9E6A-C00083C05FE3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +43,6 @@ Global
 		{A100DD4D-105C-4E21-8D95-B889761E01C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A100DD4D-105C-4E21-8D95-B889761E01C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A100DD4D-105C-4E21-8D95-B889761E01C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69B74D09-3CBB-42D8-9E6A-C00083C05FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69B74D09-3CBB-42D8-9E6A-C00083C05FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69B74D09-3CBB-42D8-9E6A-C00083C05FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69B74D09-3CBB-42D8-9E6A-C00083C05FE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
