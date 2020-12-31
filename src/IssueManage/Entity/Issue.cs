@@ -1,7 +1,6 @@
-﻿using IssueManage.Pages.Enums;
-using System;
+﻿using System;
 
-namespace IssueManage.Pages.Entity
+namespace IssueManage
 {
     public class Issue
     {

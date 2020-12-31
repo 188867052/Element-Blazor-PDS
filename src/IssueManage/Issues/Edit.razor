@@ -2,7 +2,6 @@
 @inherits EditBase
 @attribute [Resource("issueCreate", "新建问题")]
 @using Element
-@using IssueManage.Pages.Issues
 <BAuthorizeView Roles="@Roles">
     <BForm @ref="form">
         <h3>问题简介</h3>
@@ -13,8 +12,8 @@
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="IssueManage.Pages.Enums.IssueStatus" Label="编号" Name="@nameof(IssueEditModel.Status)">
-                    <BSelect TValue="IssueManage.Pages.Enums.IssueStatus"></BSelect>
+                <BFormItem IsRequired="true" TValue="IssueStatus" Label="编号" Name="@nameof(IssueEditModel.Status)">
+                    <BSelect TValue="IssueStatus"></BSelect>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
@@ -28,8 +27,8 @@
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem IsRequired="true" TValue="IssueManage.Pages.Enums.IssueLevel" Label="严重度" Name="@nameof(IssueEditModel.Level)">
-                    <BSelect TValue="IssueManage.Pages.Enums.IssueLevel"></BSelect>
+                <BFormItem IsRequired="true" TValue="IssueLevel" Label="严重度" Name="@nameof(IssueEditModel.Level)">
+                    <BSelect TValue="IssueLevel"></BSelect>
                 </BFormItem>
             </div>
         </div>

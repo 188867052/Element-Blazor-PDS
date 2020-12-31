@@ -3,12 +3,9 @@ using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IssueManage.Pages.Entity;
 using Element;
 using IssueManage.Pages.Extension;
 using IssueManage.Issues;
-using IssueManage.Pages;
-using IssueManage.Pages.Issues;
 
 namespace IssueManage
 {

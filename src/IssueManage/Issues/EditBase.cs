@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 using Element;
-using IssueManage.Pages.Issues;
 
 namespace IssueManage
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace IssueManage.Pages.Enums
+namespace IssueManage
 {
     public enum IssueLevel
     {

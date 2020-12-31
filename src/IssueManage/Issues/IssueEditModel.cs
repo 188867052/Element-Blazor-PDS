@@ -1,7 +1,6 @@
-﻿using IssueManage.Pages.Enums;
-using System;
+﻿using System;
 
-namespace IssueManage.Pages.Issues
+namespace IssueManage
 {
     public class IssueEditModel
     {

@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using System.Linq;
 using Element;
 using IssueManage.Pages.Enums;
-using IssueManage.Services;
-using IssueManage.Pages;
 using IssueManage.Meetings;
 
 namespace IssueManage

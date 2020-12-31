@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using IssueManage.Pages.Entity;
-using IssueManage.Pages.Issues;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

@@ -6,8 +6,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using IssueManage.Services;
-using IssueManage;
-using Admin.ServerRender;
 
 namespace IssueManage
 {
