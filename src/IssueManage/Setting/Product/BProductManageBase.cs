@@ -5,19 +5,19 @@ using System.Linq;
 using Element;
 using IssueManage.Pages.Enums;
 using IssueManage.Pages;
-using IssueManage.Web.Setting.Customer;
+using IssueManage.Setting.Product;
 
 namespace IssueManage
 {
-    public class BCustomerManageBase : BAdminPageBase
+    public class BProductManageBase : BAdminPageBase
     {
-        protected List<CustomerModel> Models { get; private set; } = new List<CustomerModel>();
+        protected List<ProductModel> Models { get; private set; } = new List<ProductModel>();
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public CustomerService CustomerService { get; set; }
+        public ProductService ProductService { get; set; }
 
         protected BTable table;
 
@@ -31,7 +31,7 @@ namespace IssueManage
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BCustomerEdit>("创建客户", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BProductEdit>("创建产品", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
@@ -39,10 +39,10 @@ namespace IssueManage
         {
             if (table == null) return;
 
-            Models = (await CustomerService.GetAll()).Select(o => new CustomerModel
+            Models = (await ProductService.GetAll()).Select(o => new ProductModel
             {
                 Id = o.Id,
-                ContactPerson = o.ContactPersion,
+                Description = o.Description,
                 Name = o.Name,
                 CreateTime = o.CreateTime,
             }).ToList();
@@ -54,8 +54,8 @@ namespace IssueManage
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BCustomerEdit.Model), user);
-            await DialogService.ShowDialogAsync<BCustomerEdit>("编辑客户", 800, parameters);
+            parameters.Add(nameof(BProductEdit.Model), user);
+            await DialogService.ShowDialogAsync<BProductEdit>("编辑产品", 800, parameters);
             await RefreshAsync();
         }
 
@@ -69,10 +69,10 @@ namespace IssueManage
 
         public async Task Delete(object model)
         {
-            var confirm = await ConfirmAsync("确认删除该客户？");
+            var confirm = await ConfirmAsync("确认删除该产品？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await CustomerService.DeleteAsync(((CustomerModel)model).Id);
+            await ProductService.DeleteAsync(((ProductModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }

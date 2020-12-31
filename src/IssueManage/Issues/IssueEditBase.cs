@@ -1,9 +1,8 @@
 ﻿using Element;
-using IssueManage.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Issues
+namespace IssueManage
 {
     public class IssueEditBase : BAdminPageBase
     {

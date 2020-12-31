@@ -9,7 +9,7 @@ using IssueManage.Services;
 using IssueManage;
 using Admin.ServerRender;
 
-namespace IssueManage.Web
+namespace IssueManage
 {
     public class Startup
     {

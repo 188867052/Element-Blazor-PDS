@@ -1,4 +1,4 @@
-using IssueManage.Web;
+using IssueManage;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 

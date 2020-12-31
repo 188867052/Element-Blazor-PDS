@@ -6,7 +6,7 @@ using Element;
 using IssueManage.Pages.Enums;
 using IssueManage.Services;
 using IssueManage.Pages;
-using IssueManage.Web.Meetings;
+using IssueManage.Meetings;
 
 namespace IssueManage
 {

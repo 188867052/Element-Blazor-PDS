@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IssueManage.Pages.Entity;
 using Element;
 using IssueManage.Pages.Extension;
-using IssueManage.Web.Issues;
+using IssueManage.Issues;
 using IssueManage.Pages;
 using IssueManage.Pages.Issues;
 

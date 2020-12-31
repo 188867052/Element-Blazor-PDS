@@ -8,7 +8,7 @@ using Admin.ServerRender;
 using IssueManage.Services;
 using IssueManage.Pages.Extension;
 
-namespace IssueManage.Web
+namespace IssueManage
 {
     public static class ExtensionBuilder
     {
