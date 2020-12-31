@@ -1,7 +1,7 @@
 ﻿using Element;
 using System;
 
-namespace IssueManage.Pages.Index
+namespace IssueManage
 {
     public class IndexModel
     {

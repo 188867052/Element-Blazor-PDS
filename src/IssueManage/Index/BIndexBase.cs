@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AntDesign.Charts;
 using System;
 
-namespace IssueManage.Pages.Index
+namespace IssueManage
 {
     public class BIndexBase : BAdminPageBase
     {
