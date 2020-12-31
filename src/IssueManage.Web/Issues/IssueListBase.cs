@@ -7,6 +7,7 @@ using IssueManage.Pages.Entity;
 using Element;
 using IssueManage.Services;
 using IssueManage.Pages.Extension;
+using IssueManage.Web.Issues;
 
 namespace IssueManage.Pages.Issues
 {

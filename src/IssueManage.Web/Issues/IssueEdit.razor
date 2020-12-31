@@ -1,4 +1,5 @@
-﻿@inherits IssueEditBase
+﻿@inherits   IssueEditBase
+@using IssueManage.Pages.Issues
 <BForm Value="Model" @ref="form" EnableAlwaysRender="true">
     <BFormItem TValue="int" IsHidden="true" Name="@nameof(IssueGridModel.Id)">
         <BInput TValue="string"></BInput>

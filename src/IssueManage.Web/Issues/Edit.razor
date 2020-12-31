@@ -2,6 +2,7 @@
 @inherits EditBase
 @attribute [Resource("issueCreate", "新建问题")]
 @using Element
+@using IssueManage.Pages.Issues
 <BAuthorizeView Roles="@Roles">
     <BForm @ref="form">
         <h3>问题简介</h3>

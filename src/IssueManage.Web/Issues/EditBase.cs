@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 using Element;
 using IssueManage.Services;
+using IssueManage.Pages;
+using IssueManage.Pages.Issues;
 
-namespace IssueManage.Pages.Issues
+namespace IssueManage
 {
     public class EditBase : BAdminPageBase
     {
