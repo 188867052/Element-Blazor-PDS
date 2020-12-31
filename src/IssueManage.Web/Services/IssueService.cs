@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
     public class IssueService
     {

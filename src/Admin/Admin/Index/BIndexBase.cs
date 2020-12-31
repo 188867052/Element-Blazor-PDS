@@ -1,19 +1,12 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AntDesign.Charts;
 using System;
-using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Setting.Product;
 
 namespace IssueManage.Pages.Index
 {
     public class BIndexBase : BAdminPageBase
     {
-        protected List<ProductModel> Models { get; private set; } = new List<ProductModel>();
-
-        [Inject]
-        public ProductService ProductService { get; set; }
         public List<object> data = new List<object>();
 
         protected override async Task OnInitializedAsync()

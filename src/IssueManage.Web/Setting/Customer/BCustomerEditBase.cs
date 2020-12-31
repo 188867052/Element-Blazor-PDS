@@ -1,9 +1,9 @@
 ﻿using Element;
-using IssueManage.Services;
+using IssueManage.Pages;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Setting.Customer
+namespace IssueManage
 {
     public class BCustomerEditBase : BAdminPageBase
     {

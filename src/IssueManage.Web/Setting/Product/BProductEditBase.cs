@@ -1,10 +1,9 @@
 ﻿using Element;
-using IssueManage.Pages.Abstract;
-using IssueManage.Services;
+using IssueManage.Pages;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Setting.Product
+namespace IssueManage
 {
     public class BProductEditBase : BAdminPageBase
     {
@@ -30,13 +29,9 @@ namespace IssueManage.Pages.Setting.Product
 
             Model = form.GetValue<ProductModel>();
             if (isCreate)
-            {
                 await ProductService.AddAsync(Model);
-            }
             else
-            {
                 await ProductService.UpdateAsync(Model);
-            }
             await DialogService.CloseDialogAsync(this, (object)null);
         }
     }

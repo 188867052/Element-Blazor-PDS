@@ -1,5 +1,4 @@
 ﻿using IssueManage.Pages.Entity;
-using IssueManage.Pages.Setting.Product;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,22 +7,23 @@ using System.Transactions;
 
 namespace IssueManage
 {
-    public class ProductService
+    public class CustomerService 
     {
         private readonly DbContext dbContext;
 
-        public ProductService(DbContext dbContext)
+        public CustomerService(DbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(ProductModel model)
+        public async Task AddAsync(CustomerModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Product>().Add(new Product
+           
+            dbContext.Set<Customer>().Add(new Customer
             {
                 Name = model.Name,
-                Description = model.Description,
+                ContactPersion = model.ContactPerson,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -34,24 +34,24 @@ namespace IssueManage
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Product>().Remove(dbContext.Set<Product>().Find(id));
+            dbContext.Set<Customer>().Remove(dbContext.Set<Customer>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Product>> GetAll()
+        public Task<List<Customer>> GetAll()
         {
-            return dbContext.Set<Product>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Customer>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(ProductModel model)
+        public async Task UpdateAsync(CustomerModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Product>().Find(model.Id);
+            var entity = dbContext.Set<Customer>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            entity.Description = model.Description;
-            dbContext.Set<Product>().Update(entity);
+            entity.ContactPersion = model.ContactPerson;
+            dbContext.Set<Customer>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
