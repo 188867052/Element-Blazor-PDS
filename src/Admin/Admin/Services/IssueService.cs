@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Entity;
 using IssueManage.Pages.Issues;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +9,7 @@ using System.Transactions;
 
 namespace IssueManage.Services
 {
-    public class IssueService : IIssueService
+    public class IssueService
     {
         private readonly DbContext dbContext;
         private readonly IMapper mapper;

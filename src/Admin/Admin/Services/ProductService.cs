@@ -1,5 +1,4 @@
-﻿using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Entity;
+﻿using IssueManage.Pages.Entity;
 using IssueManage.Pages.Setting.Product;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,9 +6,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
-    public class ProductService : IProductService
+    public class ProductService
     {
         private readonly DbContext dbContext;
 

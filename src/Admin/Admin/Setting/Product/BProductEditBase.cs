@@ -1,5 +1,6 @@
 ﻿using Element;
 using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace IssueManage.Pages.Setting.Product
         public ProductModel Model { get; set; }
 
         [Inject]
-        public IProductService ProductService { get; set; }
+        public ProductService ProductService { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }

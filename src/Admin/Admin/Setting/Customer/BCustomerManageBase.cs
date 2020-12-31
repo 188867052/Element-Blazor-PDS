@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using IssueManage.Pages.Abstract;
 using Element;
 using IssueManage.Pages.Enums;
+using IssueManage.Services;
 
 namespace IssueManage.Pages.Setting.Customer
 {
@@ -16,7 +16,7 @@ namespace IssueManage.Pages.Setting.Customer
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public ICustomerService CustomerService { get; set; }
+        public CustomerService CustomerService { get; set; }
 
         protected BTable table;
 

@@ -1,5 +1,5 @@
 ﻿using Element;
-using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
@@ -12,7 +12,7 @@ namespace IssueManage.Pages.Setting.Customer
         public CustomerModel Model { get; set; }
 
         [Inject]
-        public ICustomerService CustomerService { get; set; }
+        public CustomerService CustomerService { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }

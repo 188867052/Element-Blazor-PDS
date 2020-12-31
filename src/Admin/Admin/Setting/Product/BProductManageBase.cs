@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using IssueManage.Pages.Abstract;
 using Element;
 using IssueManage.Pages.Enums;
 
@@ -16,7 +15,7 @@ namespace IssueManage.Pages.Setting.Product
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public IProductService ProductService { get; set; }
+        public ProductService ProductService { get; set; }
 
         protected BTable table;
 

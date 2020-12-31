@@ -1,5 +1,5 @@
 ﻿using Element;
-using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
@@ -12,7 +12,7 @@ namespace IssueManage.Pages.Meetings
         public MeetingModel Model { get; set; }
 
         [Inject]
-        public IMeetingService MeetingService { get; set; }
+        public MeetingService MeetingService { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }

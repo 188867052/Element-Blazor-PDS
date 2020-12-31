@@ -1,5 +1,5 @@
 ﻿using Element;
-using IssueManage.Pages.Abstract;
+using IssueManage.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
@@ -17,7 +17,7 @@ namespace IssueManage.Pages.Issues
         public DialogOption Dialog { get; set; }
 
         [Inject]
-        public IIssueService IssueService { get; set; }
+        public IssueService IssueService { get; set; }
 
         protected override void OnInitialized()
         {

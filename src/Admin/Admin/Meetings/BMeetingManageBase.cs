@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-using IssueManage.Pages.Abstract;
 using Element;
 using IssueManage.Pages.Enums;
+using IssueManage.Services;
 
 namespace IssueManage.Pages.Meetings
 {
@@ -16,7 +16,7 @@ namespace IssueManage.Pages.Meetings
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public IMeetingService MeetingService { get; set; }
+        public MeetingService MeetingService { get; set; }
 
         protected BTable table;
 

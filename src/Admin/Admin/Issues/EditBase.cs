@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
-using IssueManage.Pages.Abstract;
 using Element;
+using IssueManage.Services;
 
 namespace IssueManage.Pages.Issues
 {
@@ -11,7 +11,7 @@ namespace IssueManage.Pages.Issues
         internal BForm form;
 
         [Inject]
-        public IIssueService IssueService { get; set; }
+        public IssueService IssueService { get; set; }
 
         [Inject]
         public IMapper mapper { get; set; }

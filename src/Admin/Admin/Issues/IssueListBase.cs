@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IssueManage.Pages.Framework.Extension;
-using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Entity;
 using Element;
+using IssueManage.Services;
 
 namespace IssueManage.Pages.Issues
 {
@@ -16,7 +16,7 @@ namespace IssueManage.Pages.Issues
         protected IEnumerable<IssueGridModel> Models { get; private set; } = new List<IssueGridModel>();
 
         [Inject]
-        public IIssueService IssueService { get; set; }
+        public IssueService IssueService { get; set; }
 
         [Inject]
         public IMapper mapper { get; set; }

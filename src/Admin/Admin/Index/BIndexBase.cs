@@ -13,7 +13,7 @@ namespace IssueManage.Pages.Index
         protected List<ProductModel> Models { get; private set; } = new List<ProductModel>();
 
         [Inject]
-        public IProductService ProductService { get; set; }
+        public ProductService ProductService { get; set; }
         public List<object> data = new List<object>();
 
         protected override async Task OnInitializedAsync()

@@ -20,13 +20,20 @@ namespace IssueManage.Web
             services.AddBlazuiServices();
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
-            services.AddScoped<IProductService, ProductService>();
-            services.AddTransient<IIssueService, IssueService>();
-            services.AddTransient<IMeetingService, MeetingService>();
-            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddService();
             services.AddAdmin<DocsDbContext, IdentityUser>();
             return services;
         }
+
+        public static IServiceCollection AddService(this IServiceCollection services)
+        {
+            services.AddTransient<ProductService>();
+            services.AddTransient<IssueService>();
+            services.AddTransient<MeetingService>();
+            services.AddTransient<CustomerService>();
+            return services;
+        }
+
 
         public static IApplicationBuilder UseAdmin(this IApplicationBuilder app)
         {

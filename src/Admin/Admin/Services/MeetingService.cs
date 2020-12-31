@@ -9,7 +9,7 @@ using System.Transactions;
 
 namespace IssueManage.Services
 {
-    public class MeetingService : IMeetingService
+    public class MeetingService 
     {
         private readonly DbContext dbContext;
 
