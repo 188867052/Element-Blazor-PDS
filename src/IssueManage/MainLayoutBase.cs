@@ -27,11 +27,11 @@ namespace IssueManage
                          Icon="el-icon-s-promotion",
                          Route="/issue"
                     },
-                    //new MenuModel(){
-                    //     Label="新建问题",
-                    //     Icon="el-icon-cpu",
-                    //     Route="/issue/edit"
-                    //}
+                    new MenuModel(){
+                         Label="问题状态表",
+                         Icon="el-icon-cpu",
+                         Route="/issue/edit"
+                    }
                 }
             });
 
@@ -49,10 +49,39 @@ namespace IssueManage
                     new MenuModel(){
                          Label="发起会议",
                          Icon="el-icon-cpu",
-                         Route="/meeting1"
                     }
                 }
             });
+
+            Menus.Add(new MenuModel()
+            {
+                Label = "变化点",
+                Icon = "el-icon-document",
+                Children = new List<MenuModel>()
+                {
+                    new MenuModel(){
+                         Label="时间轴",
+                         Icon="el-icon-cpu",
+                    },
+                    new MenuModel(){
+                         Label="新建变化点",
+                         Icon="el-icon-cpu",
+                    }
+                }
+            });
+
+            Menus.Add(new MenuModel()
+            {
+                Label = "统计图",
+                Icon = "el-icon-document",
+            });
+
+            Menus.Add(new MenuModel()
+            {
+                Label = "质量工具",
+                Icon = "el-icon-document",
+            });
+
 
             Menus.Add(new MenuModel()
             {
