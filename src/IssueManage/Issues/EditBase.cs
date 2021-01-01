@@ -29,7 +29,7 @@ namespace IssueManage
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
-            await JSRuntime.HideByIdAsync("el-tabs__nav-scroll");
+            //await JSRuntime.HideByIdAsync("el-tabs__nav-scroll");
 
             if (!firstRender) return;
 

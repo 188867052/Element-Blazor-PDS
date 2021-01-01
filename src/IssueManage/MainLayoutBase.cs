@@ -27,11 +27,11 @@ namespace Admin.ServerRender
                          Icon="el-icon-s-promotion",
                          Route="/issue"
                     },
-                    new MenuModel(){
-                         Label="新建问题",
-                         Icon="el-icon-cpu",
-                         Route="/issue/edit"
-                    }
+                    //new MenuModel(){
+                    //     Label="新建问题",
+                    //     Icon="el-icon-cpu",
+                    //     Route="/issue/edit"
+                    //}
                 }
             });
 

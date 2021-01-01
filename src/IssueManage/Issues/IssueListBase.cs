@@ -31,7 +31,7 @@ namespace IssueManage
 
         public async Task CreateAsync()
         {
-            await JSRuntime.HrefBlankAsync("/issue/create");
+            await JSRuntime.HrefBlankAsync("/issue/edit");
         }
 
         private async Task RefreshAsync()
