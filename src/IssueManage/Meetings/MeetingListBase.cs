@@ -7,12 +7,9 @@ using IssueManage.Meetings;
 
 namespace IssueManage
 {
-    public class BMeetingManageBase : BAdminPageBase
+    public class MeetingListBase : BAdminPageBase
     {
-        protected List<MeetingModel> Models { get; private set; } = new List<MeetingModel>();
-        internal bool CanCreate { get; private set; }
-        internal bool CanUpdate { get; private set; }
-        internal bool CanDelete { get; private set; }
+        protected List<MeetingGridModel> Models { get; private set; } = new List<MeetingGridModel>();
 
         [Inject]
         public MeetingService MeetingService { get; set; }
@@ -22,28 +19,22 @@ namespace IssueManage
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            CanCreate = IsCanAccessAny(AdminResources.CreateUser.ToString());
-            CanUpdate = IsCanAccessAny(AdminResources.UpdateUser.ToString());
-            CanDelete = IsCanAccessAny(AdminResources.DeleteUser.ToString());
         }
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BMeetingEdit>("创建会议", 800, new Dictionary<string, object>());
-            await RefreshAsync();
+            await JSRuntime.HrefBlankAsync("/meeting/create");
         }
 
         private async Task RefreshAsync()
         {
             if (table == null) return;
 
-            Models = (await MeetingService.GetAll()).Select(o => new MeetingModel
+            Models = (await MeetingService.GetAll()).Select(o => new MeetingGridModel
             {
                 Id = o.Id,
                 Topic = o.Topic,
                 Content = o.Content,
-                CreateTime = o.CreateTime,
-                UpdateTime = o.UpdateTime,
             }).ToList();
             table.MarkAsRequireRender();
             RequireRender = true;

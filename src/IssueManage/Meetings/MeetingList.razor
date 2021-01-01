@@ -1,0 +1,22 @@
+﻿@page "/meeting"
+@inherits MeetingListBase
+@attribute [Resource("MeetingList", "会议系统")]
+<BAuthorizeView Roles="@Roles">
+    <BButtonGroup>
+        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建会议</BButton>
+    </BButtonGroup>
+
+    <h3>我参与的</h3>
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">
+    </BTable>
+
+    <div class="el-divider el-divider--horizontal"></div>
+    <h3>我发起的</h3>
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">
+    </BTable>
+
+    <div class="el-divider el-divider--horizontal"></div>
+    <h3>即将召开的会议</h3>
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">
+    </BTable>
+</BAuthorizeView>
