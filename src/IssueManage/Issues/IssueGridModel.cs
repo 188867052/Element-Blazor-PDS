@@ -22,7 +22,7 @@ namespace IssueManage
         [TableColumn(Text = "变化来源")]
         public string ChangeFrom { get; set; } = "来源1";
 
-        [TableColumn(Text = "状态")]
+        [TableColumn(Text = "当前状态")]
         public IssueStatus Status { get; set; }
     }
 }

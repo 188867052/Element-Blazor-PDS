@@ -38,9 +38,9 @@ namespace IssueManage
             scope.Complete();
         }
 
-        public Task<List<Issue>> GetAll()
+        public async Task<List<Issue>> GetAll()
         {
-            return dbContext.Set<Issue>().AsNoTracking().ToListAsync();
+            return await dbContext.Set<Issue>().AsNoTracking().ToListAsync();
         }
 
         public async Task UpdateAsync(IssueGridModel model)

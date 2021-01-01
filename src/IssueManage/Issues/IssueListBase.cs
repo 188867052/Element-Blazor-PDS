@@ -38,23 +38,8 @@ namespace IssueManage
         {
             if (table == null) return;
 
-            table.MarkAsRequireRender();
-            RequireRender = true;
-            StateHasChanged();
-        }
-
-        public async Task EditAsync(object model)
-        {
-            var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(IssueEdit.Model), model);
-            await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
-            await RefreshAsync();
-        }
-
-        public async Task SearchAsync()
-        {
-            if (!form.IsValid()) return;
-
+            var issues = await IssueService.GetAll();
+            Models = mapper.Map<Issue, IssueGridModel>(issues).ToList();
             var model = form.GetValue<IssueSearchModel>();
             if (!string.IsNullOrEmpty(model.Description))
             {
@@ -72,6 +57,25 @@ namespace IssueManage
             {
                 Models = Models.Where(o => o.CreateTime <= model.EndCreateTime);
             }
+
+            table.MarkAsRequireRender();
+            RequireRender = true;
+            StateHasChanged();
+        }
+
+        public async Task EditAsync(object model)
+        {
+            var parameters = new Dictionary<string, object>();
+            parameters.Add(nameof(IssueEdit.Model), model);
+            await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
+            await RefreshAsync();
+        }
+
+        public async Task SearchAsync()
+        {
+            if (!form.IsValid()) return;
+
+            
             await RefreshAsync();
         }
 
