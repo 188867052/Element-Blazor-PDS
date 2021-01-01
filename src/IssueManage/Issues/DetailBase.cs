@@ -4,12 +4,17 @@ using Element;
 
 namespace IssueManage
 {
-    public class EditBase : BAdminPageBase
+    public class DetailBase : BAdminPageBase
     {
         internal BForm form;
 
+        internal IssueEditModel Model;
+
         [Inject]
         public IssueService IssueService { get; set; }
+
+        [Parameter]
+        public int Id { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -39,11 +44,10 @@ namespace IssueManage
             var model = form.GetValue<IssueEditModel>();
             var entity = mapper.Map<IssueEditModel, Issue>(model);
             var result = await AdminDbContext.Issues.AddAsync(entity);
-            await AdminDbContext.SaveChangesAsync();
             if (result.IsKeySet)
             {
                 Toast("创建成功！");
-                NavigationManager.NavigateTo($"/issue/detail?id={result.Entity.Id}");
+                await JSRuntime.HrefBlankAsync($"/issue/detail?id={result.Entity.Id}");
             }
             else
             {

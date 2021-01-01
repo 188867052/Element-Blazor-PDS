@@ -15,6 +15,8 @@ namespace IssueManage
                 .ForMember(d => d.ChangeFrom, s => s.MapFrom(s => s.ChangeFrom))
                 .ForMember(d => d.Status, s => s.MapFrom(s => s.Status))
                 .ReverseMap();
+
+            CreateMap<IssueEditModel, Issue>();
         }
     }
 }

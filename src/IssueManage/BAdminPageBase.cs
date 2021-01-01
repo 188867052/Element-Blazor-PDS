@@ -1,4 +1,5 @@
-﻿using Element;
+﻿using AutoMapper;
+using Element;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace IssueManage
         protected bool IsAdmin { get; set; }
         [Inject]
         public UserService UserService { get; set; }
+
+        [Inject]
+        public AdminDbContext AdminDbContext { get; set; }
+
+        [Inject]
+        public IMapper mapper { get; set; }
 
         /// <summary>
         /// 当前页面允许访问的角色
