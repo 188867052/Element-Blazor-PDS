@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 
-namespace Admin.ServerRender
+namespace IssueManage
 {
     public class MainLayoutBase : LayoutComponentBase
     {

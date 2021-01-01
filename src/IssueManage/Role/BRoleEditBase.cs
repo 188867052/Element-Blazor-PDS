@@ -1,9 +1,11 @@
 ﻿using Element;
+using IssueManage.Pages;
+using IssueManage.Pages.Role;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IssueManage.Pages.Role
+namespace IssueManage
 {
     public class BRoleEditBase : BAdminPageBase
     {

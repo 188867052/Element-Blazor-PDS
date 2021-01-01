@@ -1,9 +1,10 @@
 ﻿using Element;
-using IssueManage.Pages.Enums;
+using IssueManage.Pages.User;
+using IssueManage.User;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.User
+namespace IssueManage
 {
     public class BUserManagementBase : BAdminPageBase
     {

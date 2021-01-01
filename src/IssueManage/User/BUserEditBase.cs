@@ -1,9 +1,10 @@
 ﻿using Element;
+using IssueManage.Pages.User;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IssueManage.Pages.User
+namespace IssueManage
 {
     public class BUserEditBase : BAdminPageBase
     {

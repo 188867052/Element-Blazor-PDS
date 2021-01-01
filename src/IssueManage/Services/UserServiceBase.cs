@@ -6,12 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
-using IssueManage.Pages.Abstract;
-using IssueManage.Pages.Entity;
 using IssueManage.Pages.Role;
 using IssueManage.Pages.User;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
     public abstract class UserServiceBase<TUser, TRole> : IUserService
            where TUser : IdentityUser

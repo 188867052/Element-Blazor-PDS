@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Element;
 using Element.Admin;
-using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Extension;
 
 namespace IssueManage

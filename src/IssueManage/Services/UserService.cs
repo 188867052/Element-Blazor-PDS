@@ -1,5 +1,4 @@
-﻿using IssueManage.Pages.Entity;
-using IssueManage.Pages.Role;
+﻿using IssueManage.Pages.Role;
 using IssueManage.Pages.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
     public class UserService : UserServiceBase<IdentityUser, IdentityRole>
     {

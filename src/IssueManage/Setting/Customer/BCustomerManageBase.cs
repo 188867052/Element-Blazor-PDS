@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Element;
-using IssueManage.Pages.Enums;
 using IssueManage.Setting.Customer;
 
 namespace IssueManage

@@ -29,7 +29,7 @@ namespace Element.Admin
             }
         }
 
-        internal Type GetComponent(string path)
+        public Type GetComponent(string path)
         {
             routeMap.TryGetValue(path, out var component);
             return component;

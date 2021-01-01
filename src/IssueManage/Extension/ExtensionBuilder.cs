@@ -1,15 +1,14 @@
 ﻿using Element.Admin;
-using IssueManage.Pages.Abstract;
-using IssueManage.Services;
+using IssueManage.Pages;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace IssueManage.Pages.Extension
+namespace IssueManage
 {
-    public static class ExtensionBuilder
+    public static class ExtensionBuilder2
     {
         public static IServiceCollection AddAdmin<TDbContext>(this IServiceCollection services)
             where TDbContext : IdentityDbContext<IdentityUser>

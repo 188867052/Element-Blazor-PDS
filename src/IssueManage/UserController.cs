@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using IssueManage.Pages.Abstract;
 using IssueManage.Pages.User;
 
-namespace IssueManage.Services
+namespace IssueManage
 {
     public class UserController : ControllerBase
     {

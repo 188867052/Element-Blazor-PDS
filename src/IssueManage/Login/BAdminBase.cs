@@ -1,5 +1,8 @@
 ﻿using Element;
 using Element.Admin;
+using IssueManage.Login;
+using IssueManage.Pages;
+using IssueManage.Pages.Login;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
@@ -8,7 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Login
+namespace IssueManage
 {
     public class BAdminBase : BAdminPageBase
     {

@@ -1,4 +1,4 @@
-﻿namespace IssueManage.Pages.Entity
+﻿namespace IssueManage
 {
     public class RoleResource
     {

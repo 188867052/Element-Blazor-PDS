@@ -4,7 +4,7 @@ using IssueManage.Pages.User;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Abstract
+namespace IssueManage
 {
     public interface IUserService
     {

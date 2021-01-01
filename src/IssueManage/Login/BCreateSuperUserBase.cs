@@ -1,7 +1,8 @@
 ﻿using Element;
+using IssueManage.Pages.Login;
 using Microsoft.AspNetCore.Components;
 
-namespace IssueManage.Pages.Login
+namespace IssueManage
 {
     public class BCreateSuperUserBase : BAdminPageBase
     {
