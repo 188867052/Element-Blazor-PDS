@@ -11,7 +11,7 @@ using IssueManage.Pages.User;
 
 namespace IssueManage
 {
-    public abstract class UserServiceBase<TUser, TRole> : IUserService
+    public abstract class UserServiceBase<TUser, TRole>
            where TUser : IdentityUser
            where TRole : IdentityRole
     {

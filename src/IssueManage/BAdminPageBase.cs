@@ -14,7 +14,7 @@ namespace IssueManage
         /// </summary>
         protected bool IsAdmin { get; set; }
         [Inject]
-        public IUserService UserService { get; set; }
+        public UserService UserService { get; set; }
 
         /// <summary>
         /// 当前页面允许访问的角色

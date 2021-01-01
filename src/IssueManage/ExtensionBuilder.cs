@@ -3,21 +3,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Element;
 using Element.Admin;
-using IssueManage.Pages.Extension;
 
 namespace IssueManage
 {
     public static class ExtensionBuilder
     {
-        public static IServiceCollection AddAdmin<TUserService>(this IServiceCollection services)
-            where TUserService : class, IUserService
+        public static IServiceCollection AddAdmin(this IServiceCollection services)
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddHttpClient();
             services.AddBlazuiServices();
             services.AddSingleton<RouteService>();
-            services.AddScoped<IUserService, TUserService>();
+            services.AddScoped<UserService>();
             services.AddService();
             services.AddAdmin<AdminDbContext, IdentityUser>();
             return services;
@@ -31,7 +29,6 @@ namespace IssueManage
             services.AddTransient<CustomerService>();
             return services;
         }
-
 
         public static IApplicationBuilder UseAdmin(this IApplicationBuilder app)
         {

@@ -24,7 +24,7 @@ namespace IssueManage
                 options.UseSqlServer("server=119.45.37.57;database=Admin;uid=sa;pwd=Pass@Word1;");
             });
             services.AddScoped<DbContext, AdminDbContext>();
-            services.AddAdmin<UserService>();
+            services.AddAdmin();
             services.AddAutoMapper(typeof(Startup).Assembly, typeof(IAutoMapper).Assembly);
         }
 

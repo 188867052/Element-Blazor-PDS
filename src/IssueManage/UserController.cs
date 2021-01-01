@@ -6,9 +6,9 @@ namespace IssueManage
 {
     public class UserController : ControllerBase
     {
-        private readonly IUserService userService;
+        private readonly UserService userService;
 
-        public UserController(IUserService userService)
+        public UserController(UserService userService)
         {
             this.userService = userService;
         }

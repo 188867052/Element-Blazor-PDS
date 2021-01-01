@@ -27,7 +27,6 @@ namespace IssueManage
         public static IServiceCollection AddAdmin<TUser, TUserService, TDbContext>(this IServiceCollection services, Action<IdentityOptions> optionConfigure)
             where TUser : IdentityUser
             where TDbContext : IdentityDbContext<TUser>
-            where TUserService : class, IUserService
         {
             services.AddControllers();
             services.AddRazorPages();
@@ -35,7 +34,7 @@ namespace IssueManage
             services.AddHttpClient();
             services.AddSingleton<ResourceAccessor>();
             services.AddSingleton<RouteService>();
-            services.AddScoped<IUserService, TUserService>();
+            services.AddScoped<UserService>();
             services.AddAuthentication(o =>
             {
                 o.DefaultScheme = IdentityConstants.ApplicationScheme;
