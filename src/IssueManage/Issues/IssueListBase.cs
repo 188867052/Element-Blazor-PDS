@@ -41,13 +41,9 @@ namespace IssueManage
             var issues = await IssueService.GetAll();
             Models = mapper.Map<Issue, IssueGridModel>(issues).ToList();
             var model = form.GetValue<IssueSearchModel>();
-            if (!string.IsNullOrEmpty(model.Description))
+            if (!string.IsNullOrEmpty(model.ChangeFrom))
             {
-                Models = Models.Where(o => o.Description.ToLower().Contains(model.Description.ToLower()));
-            }
-            if (model.Status.HasValue)
-            {
-                Models = Models.Where(o => o.Status == model.Status);
+                Models = Models.Where(o => o.ChangeFrom.ToLower().Contains(model.ChangeFrom.ToLower()));
             }
             if (model.StartCreateTime.HasValue)
             {
@@ -74,8 +70,6 @@ namespace IssueManage
         public async Task SearchAsync()
         {
             if (!form.IsValid()) return;
-
-            
             await RefreshAsync();
         }
 

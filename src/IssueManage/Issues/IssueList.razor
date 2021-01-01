@@ -4,19 +4,16 @@
 @using Element
 <BAuthorizeView Roles="@Roles">
     <BForm Inline="true" @ref="form">
-        <BFormItem TValue="string" Label="描述" Name="@nameof(IssueSearchModel.Description)">
+        <BFormItem TValue="string" Label="变化来源" Name="@nameof(IssueSearchModel.ChangeFrom)">
             <BInput TValue="string"></BInput>
         </BFormItem>
-        <BFormItem TValue="string" Label="状态" Name="@nameof(IssueSearchModel.Status)">
-            <BSelect TValue="IssueStatus"></BSelect>
-        </BFormItem>
-        <BFormItem TValue="DateTime" Label="发起时间">
+        <BFormItem TValue="DateTime" Label="发起时间段">
             <BDatePicker Placeholder="开始时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
             <span class="el-range-separator">至</span>
-            <BDatePicker Placeholder="结束时间" Name="@nameof(IssueSearchModel.StartCreateTime)"></BDatePicker>
+            <BDatePicker Placeholder="结束时间" Name="@nameof(IssueSearchModel.EndCreateTime)"></BDatePicker>
         </BFormItem>
         <BFormActionItem Style="text-align:center">
-            <BButton Type="ButtonType.Primary" OnClick="SearchAsync">搜索</BButton>
+            <BButton Type="ButtonType.Primary" OnClick="SearchAsync">筛选</BButton>
         </BFormActionItem>
     </BForm>
     <BButtonGroup>
@@ -25,7 +22,6 @@
     <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(IssueGridModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
             <BTableTemplateColumn Text="操作" Context="model">
-                <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
                 <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
             </BTableTemplateColumn>
         </BTableColumns>
