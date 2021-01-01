@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IssueManage
 {
-    public partial class DocsDbContext : IdentityDbContext<IdentityUser>
+    public partial class AdminDbContext : IdentityDbContext<IdentityUser>
     {
-        public DocsDbContext(DbContextOptions<DocsDbContext> options) : base(options)
+        public AdminDbContext(DbContextOptions<AdminDbContext> options) : base(options)
         {
         }
 

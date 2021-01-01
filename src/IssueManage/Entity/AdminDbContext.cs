@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IssueManage
 {
-    public partial class DocsDbContext : IdentityDbContext<IdentityUser>
+    public partial class AdminDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<RoleResource> RoleResources { get; set; }
         public DbSet<Issue> Issues { get; set; }

@@ -19,7 +19,7 @@ namespace IssueManage
             services.AddSingleton<RouteService>();
             services.AddScoped<IUserService, TUserService>();
             services.AddService();
-            services.AddAdmin<DocsDbContext, IdentityUser>();
+            services.AddAdmin<AdminDbContext, IdentityUser>();
             return services;
         }
 
