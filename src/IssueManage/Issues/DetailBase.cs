@@ -18,6 +18,8 @@ namespace IssueManage
 
         protected override async Task OnInitializedAsync()
         {
+            var entity = this.AdminDbContext.Issues.Find(Id);
+            Model = mapper.Map<IssueEditModel>(entity);
             await base.OnInitializedAsync();
         }
 

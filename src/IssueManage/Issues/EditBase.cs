@@ -25,8 +25,6 @@ namespace IssueManage
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
-            //await JSRuntime.HideByIdAsync("el-tabs__nav-scroll");
-
             if (!firstRender) return;
 
             await RefreshAsync();
@@ -42,13 +40,9 @@ namespace IssueManage
             await AdminDbContext.SaveChangesAsync();
             if (result.IsKeySet)
             {
-                Toast("创建成功！");
-                NavigationManager.NavigateTo($"/issue/detail?id={result.Entity.Id}");
+                NavigationManager.NavigateTo($"/issue/detail/{result.Entity.Id}");
             }
-            else
-            {
-                Toast("创建失败！");
-            }
+
             await RefreshAsync();
         }
     }
