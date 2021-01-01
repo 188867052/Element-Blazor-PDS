@@ -9,22 +9,22 @@
         <div class="el-row" style="margin-left: 50px; margin-right: 150px;">
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="发起人" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="IssueStatus" Label="编号" Name="@nameof(IssueEditModel.Status)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
-                <BFormItem TValue="DateTime" Label="打开日期"  Name="@nameof(IssueEditModel.CreateTime)">
-                    <BDatePicker></BDatePicker>
+                <BFormItem TValue="DateTime" Label="打开日期" Name="@nameof(IssueEditModel.CreateTime)">
+                    <BDatePicker IsDisabled="true"></BDatePicker>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-16" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="问题描述" Name="@nameof(IssueEditModel.Description)">
-                    <BInput Type="InputType.Textarea" TValue="string"></BInput>
+                    <BInput IsDisabled="true" Type="InputType.Textarea" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
@@ -39,53 +39,53 @@
         <div class="el-row" style="margin-left: 50px; margin-right: 150px;">
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="问题来源" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput  IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-16" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="IssueStatus" Name="@nameof(IssueEditModel.Status)">
-                    <BRadio SelectedValue="1" Value="1">非正式</BRadio>
-                    <BRadio Value="2">正式</BRadio>
+                    <BRadio IsDisabled="true"  SelectedValue="1" Value="1">非正式</BRadio>
+                    <BRadio IsDisabled="true"  Value="2">正式</BRadio>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="客户" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput  IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="IssueStatus" Label="客户联系人" Name="@nameof(IssueEditModel.Status)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Name="@nameof(IssueEditModel.Description)" Label="电话">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="客户号" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="产品名称" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="产品号" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="接收人" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
             <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
                 <BFormItem TValue="string" Label="电话" Name="@nameof(IssueEditModel.Description)">
-                    <BInput TValue="string"></BInput>
+                    <BInput IsDisabled="true" TValue="string"></BInput>
                 </BFormItem>
             </div>
         </div>
