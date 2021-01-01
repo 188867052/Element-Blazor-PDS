@@ -1,0 +1,58 @@
+﻿@page "/meeting/create"
+@layout FormLayout
+@inherits CreateBase
+@attribute [Resource("issueCreate", "发起会议")]
+@using Element
+<BAuthorizeView Roles="@Roles">
+    <BForm @ref="form">
+        <h3>发起会议</h3>
+        <div class="el-row" style="margin-left: 50px; margin-right: 150px;">
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-24" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="会议发起人" Name="@nameof(IssueEditModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-24" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="会议议题" Name="@nameof(IssueEditModel.Description)">
+                    <BInput TValue="string"></BInput>
+                    <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">关联问题</BButton>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="DateTime" Name="@nameof(IssueEditModel.Status)" Label="会议邀请人员">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-12" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="DateTime" Label="会议时间">
+                    <BDatePicker Name="@nameof(IssueEditModel.CreateTime)"></BDatePicker>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-16" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="会议背景" Name="@nameof(IssueEditModel.Description)">
+                    <BInput Type="InputType.Textarea" TValue="string"></BInput>
+                </BFormItem>
+            </div>
+        </div>
+
+        <div class="el-divider el-divider--horizontal"></div>
+        <h3>提前准备事项</h3>
+        <div class="el-row" style="margin-left: 50px; margin-right: 150px;">
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-8" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="string" Label="问题来源" Name="@nameof(IssueEditModel.Description)">
+                    <BInput TValue="string"></BInput>
+                </BFormItem>
+            </div>
+            <div class="el-col el-col-24 el-col-xs-24 el-col-md-16" style="padding-left: 10px; padding-right: 10px;">
+                <BFormItem TValue="IssueStatus" Name="@nameof(IssueEditModel.Status)">
+                    <BRadio SelectedValue="1" Value="1">非正式</BRadio>
+                    <BRadio Value="2">正式</BRadio>
+                </BFormItem>
+            </div>
+        </div>
+
+        <BFormActionItem Style="text-align:center">
+            <BButton Type="ButtonType.Primary" OnClick="SubmitAsync">保存</BButton>
+        </BFormActionItem>
+    </BForm>
+</BAuthorizeView>

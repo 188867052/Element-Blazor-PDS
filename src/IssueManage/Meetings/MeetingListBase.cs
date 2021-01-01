@@ -56,15 +56,5 @@ namespace IssueManage
 
             await RefreshAsync();
         }
-
-        public async Task Delete(object model)
-        {
-            var confirm = await ConfirmAsync("确认删除该客户？");
-            if (confirm != MessageBoxResult.Ok) return;
-
-            await MeetingService.DeleteAsync(((MeetingModel)model).Id);
-            Toast("删除成功！");
-            await RefreshAsync();
-        }
     }
 }
