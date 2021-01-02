@@ -23,6 +23,18 @@ namespace Admin.ServerRender
                 Icon = "el-icon-cpu",
                 Route = "/department"
             });
+            Menus.Add(new MenuModel()
+            {
+                Label = "医生管理",
+                Icon = "el-icon-cpu",
+                Route = "/department2"
+            });
+            Menus.Add(new MenuModel()
+            {
+                Label = "病人管理",
+                Icon = "el-icon-cpu",
+                Route = "/department3"
+            });
         }
     }
 }

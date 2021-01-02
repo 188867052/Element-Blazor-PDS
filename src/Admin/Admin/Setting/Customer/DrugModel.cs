@@ -11,7 +11,7 @@ namespace IssueManage.Pages.Setting.Customer
         public string Name { get; set; }
 
         [TableColumn(Text = "药品类型")]
-        public string Description { get; set; }
+        public string DrugType { get; set; }
 
         [TableColumn(Text = "数量")]
         public int Amount { get; set; }

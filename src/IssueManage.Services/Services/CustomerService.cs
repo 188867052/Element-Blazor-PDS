@@ -25,7 +25,7 @@ namespace IssueManage.Services
             dbContext.Set<Drug>().Add(new Drug
             {
                 Name = model.Name,
-                Description = model.Description,
+                DrugType = model.DrugType,
                 Price = model.Price,
                 Amount = model.Amount,
                 CreateTime = DateTime.Now,
@@ -55,7 +55,7 @@ namespace IssueManage.Services
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
             entity.Price = model.Price;
-            entity.Description = model.Description;
+            entity.DrugType = model.DrugType;
             entity.Amount = model.Amount;
             entity.Price = model.Price;
             dbContext.Set<Drug>().Update(entity);

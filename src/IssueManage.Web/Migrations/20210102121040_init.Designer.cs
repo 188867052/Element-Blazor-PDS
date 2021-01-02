@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IssueManage.Web.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20210102115514_init")]
+    [Migration("20210102121040_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace IssueManage.Web.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DrugType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

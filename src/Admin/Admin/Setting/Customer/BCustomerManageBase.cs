@@ -37,7 +37,7 @@ namespace IssueManage.Pages.Setting.Customer
                 Amount = o.Amount,
                 Price = o.Price,
                 Name = o.Name,
-                Description = o.Description,
+                DrugType = o.DrugType,
                 CreateTime = o.CreateTime,
                 UpdateTime = o.UpdateTime,
             }).ToList();

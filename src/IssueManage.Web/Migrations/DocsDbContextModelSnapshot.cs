@@ -59,7 +59,7 @@ namespace IssueManage.Web.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DrugType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
