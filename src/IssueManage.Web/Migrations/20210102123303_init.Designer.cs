@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IssueManage.Web.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20210102122114_init")]
+    [Migration("20210102123303_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,12 +104,35 @@ namespace IssueManage.Web.Migrations
                     b.ToTable("Drugs");
                 });
 
+            modelBuilder.Entity("IssueManage.Pages.Entity.DrugStock", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DrugId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DrugId");
+
+                    b.ToTable("DrugStocks");
+                });
+
             modelBuilder.Entity("IssueManage.Pages.Entity.Patient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<decimal>("Cost")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
@@ -352,6 +375,17 @@ namespace IssueManage.Web.Migrations
                         .IsRequired();
 
                     b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("IssueManage.Pages.Entity.DrugStock", b =>
+                {
+                    b.HasOne("IssueManage.Pages.Entity.Drug", "Drug")
+                        .WithMany()
+                        .HasForeignKey("DrugId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Drug");
                 });
 
             modelBuilder.Entity("IssueManage.Pages.Entity.Patient", b =>

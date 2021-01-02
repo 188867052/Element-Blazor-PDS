@@ -222,12 +222,33 @@ namespace IssueManage.Web.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DrugStocks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DrugId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DrugStocks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DrugStocks_Drugs_DrugId",
+                        column: x => x.DrugId,
+                        principalTable: "Drugs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Patients",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DoctorId = table.Column<int>(type: "int", nullable: false),
                     CreateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -288,6 +309,11 @@ namespace IssueManage.Web.Migrations
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DrugStocks_DrugId",
+                table: "DrugStocks",
+                column: "DrugId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Patients_DoctorId",
                 table: "Patients",
                 column: "DoctorId");
@@ -311,7 +337,7 @@ namespace IssueManage.Web.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Drugs");
+                name: "DrugStocks");
 
             migrationBuilder.DropTable(
                 name: "Patients");
@@ -324,6 +350,9 @@ namespace IssueManage.Web.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Drugs");
 
             migrationBuilder.DropTable(
                 name: "Doctors");
