@@ -10,6 +10,6 @@ namespace IssueManage.Pages.Abstract
         Task AddAsync(ProductModel model);
         Task DeleteAsync(int id);
         Task UpdateAsync(ProductModel model);
-        Task<List<Product>> GetAll();
+        Task<List<Patient>> GetAll();
     }
 }

@@ -21,10 +21,9 @@ namespace IssueManage.Services
         public async Task AddAsync(ProductModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Product>().Add(new Product
+            dbContext.Set<Patient>().Add(new Patient
             {
                 Name = model.Name,
-                Description = model.Description,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -35,24 +34,23 @@ namespace IssueManage.Services
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Product>().Remove(dbContext.Set<Product>().Find(id));
+            dbContext.Set<Patient>().Remove(dbContext.Set<Patient>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Product>> GetAll()
+        public Task<List<Patient>> GetAll()
         {
-            return dbContext.Set<Product>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Patient>().AsNoTracking().ToListAsync();
         }
 
         public async Task UpdateAsync(ProductModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Product>().Find(model.Id);
+            var entity = dbContext.Set<Patient>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            entity.Description = model.Description;
-            dbContext.Set<Product>().Update(entity);
+            dbContext.Set<Patient>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

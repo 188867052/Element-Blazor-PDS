@@ -23,12 +23,14 @@ namespace Admin.ServerRender
                 });
             });
 
-            builder.Entity<Issue>(e =>
+            builder.Entity<Doctor>(e =>
             {
                 e.HasKey(x => new
                 {
                     x.Id,
                 });
+
+                e.HasOne(x => x.Department);
             });
 
             builder.Entity<Drug>(e =>
@@ -39,7 +41,7 @@ namespace Admin.ServerRender
                 });
             });
 
-            builder.Entity<Product>(e =>
+            builder.Entity<Patient>(e =>
             {
                 e.HasKey(x => new
                 {

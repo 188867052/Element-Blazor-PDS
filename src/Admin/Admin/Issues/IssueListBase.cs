@@ -45,7 +45,7 @@ namespace IssueManage.Pages.Issues
             if (table == null) return;
 
             var issues = await IssueService.GetAll();
-            Models = mapper.Map<Issue, IssueListModel>(issues).ToList();
+            Models = mapper.Map<Doctor, IssueListModel>(issues).ToList();
 
             table.MarkAsRequireRender();
             RequireRender = true;
@@ -60,8 +60,6 @@ namespace IssueManage.Pages.Issues
             parameters.Add(nameof(IssueEdit.Model), new IssueEditModel
             {
                 Id = model.Id,
-                Description = model.Description,
-                ImplementTime = model.ImplementTime,
             });
             await DialogService.ShowDialogAsync<IssueEdit>("编辑问题", 800, parameters);
             await RefreshAsync();

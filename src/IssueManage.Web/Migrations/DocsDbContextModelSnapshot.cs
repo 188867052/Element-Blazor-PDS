@@ -46,6 +46,32 @@ namespace IssueManage.Web.Migrations
                     b.ToTable("Departments");
                 });
 
+            modelBuilder.Entity("IssueManage.Pages.Entity.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Doctors");
+                });
+
             modelBuilder.Entity("IssueManage.Pages.Entity.Drug", b =>
                 {
                     b.Property<int>("Id")
@@ -76,58 +102,19 @@ namespace IssueManage.Web.Migrations
                     b.ToTable("Drugs");
                 });
 
-            modelBuilder.Entity("IssueManage.Pages.Entity.Issue", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.Patient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("ChangeFrom")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ImplementTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Level")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Product")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
+                    b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Issues");
-                });
-
-            modelBuilder.Entity("IssueManage.Pages.Entity.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -136,7 +123,9 @@ namespace IssueManage.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("IssueManage.Pages.Entity.RoleResource", b =>
@@ -350,6 +339,28 @@ namespace IssueManage.Web.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("IssueManage.Pages.Entity.Doctor", b =>
+                {
+                    b.HasOne("IssueManage.Pages.Entity.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("IssueManage.Pages.Entity.Patient", b =>
+                {
+                    b.HasOne("IssueManage.Pages.Entity.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

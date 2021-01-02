@@ -8,9 +8,9 @@ namespace Admin.ServerRender
     public partial class DocsDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<RoleResource> RoleResources { get; set; }
-        public DbSet<Issue> Issues { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Drug> Drugs { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<Department> Departments { get; set; }
     }
 }

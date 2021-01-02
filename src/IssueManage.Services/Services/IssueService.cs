@@ -25,10 +25,10 @@ namespace IssueManage.Services
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
 
-            var issue = mapper.Map<IssueEditModel, Issue>(model);
+            var issue = mapper.Map<IssueEditModel, Doctor>(model);
             issue.CreateTime = DateTime.Now;
             issue.UpdateTime = DateTime.Now;
-            dbContext.Set<Issue>().Add(issue);
+            dbContext.Set<Doctor>().Add(issue);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
@@ -36,23 +36,23 @@ namespace IssueManage.Services
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Issue>().Remove(dbContext.Set<Issue>().Find(id));
+            dbContext.Set<Doctor>().Remove(dbContext.Set<Doctor>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Issue>> GetAll()
+        public Task<List<Doctor>> GetAll()
         {
-            return dbContext.Set<Issue>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Doctor>().AsNoTracking().ToListAsync();
         }
 
         public async Task UpdateAsync(IssueEditModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Issue>().Find(model.Id);
+            var entity = dbContext.Set<Doctor>().Find(model.Id);
             mapper.Map(model, entity);
             entity.UpdateTime = DateTime.Now;
-            dbContext.Set<Issue>().Update(entity);
+            dbContext.Set<Doctor>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

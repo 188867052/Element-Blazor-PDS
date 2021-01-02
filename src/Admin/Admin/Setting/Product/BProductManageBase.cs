@@ -41,7 +41,6 @@ namespace IssueManage.Pages.Setting.Product
             Models = (await ProductService.GetAll()).Select(o => new ProductModel
             {
                 Id = o.Id,
-                Description = o.Description,
                 Name = o.Name,
                 CreateTime = o.CreateTime,
             }).ToList();
