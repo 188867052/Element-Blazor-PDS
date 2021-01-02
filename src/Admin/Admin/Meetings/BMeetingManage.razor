@@ -1,11 +1,11 @@
-﻿@page "/meeting"
+﻿@page "/department"
 @inherits BMeetingManageBase
 @attribute [Resource("MeetingList", "会议系统")]
 <BAuthorizeView Roles="@Roles">
     @if (CanCreate)
     {
         <BButtonGroup>
-            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建会议</BButton>
+            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">添加科室</BButton>
         </BButtonGroup>
     }
     <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">

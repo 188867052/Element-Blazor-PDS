@@ -30,7 +30,7 @@ namespace IssueManage.Pages.Meetings
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BMeetingEdit>("创建会议", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BMeetingEdit>("添加科室", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 

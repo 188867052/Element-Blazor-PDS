@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Admin.ServerRender.Migrations
+namespace IssueManage.Web.Migrations
 {
     [DbContext(typeof(DocsDbContext))]
-    [Migration("20201227134616_init")]
+    [Migration("20210102112455_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace Admin.ServerRender.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("Element.Admin.Entity.Customer", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,7 +60,7 @@ namespace Admin.ServerRender.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Element.Admin.Entity.Issue", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.Issue", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace Admin.ServerRender.Migrations
                     b.ToTable("Issues");
                 });
 
-            modelBuilder.Entity("Element.Admin.Entity.Meeting", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.Meeting", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,7 +123,7 @@ namespace Admin.ServerRender.Migrations
                     b.ToTable("Meetings");
                 });
 
-            modelBuilder.Entity("Element.Admin.Entity.Product", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -147,7 +147,7 @@ namespace Admin.ServerRender.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Element.Admin.Entity.RoleResource", b =>
+            modelBuilder.Entity("IssueManage.Pages.Entity.RoleResource", b =>
                 {
                     b.Property<string>("ResourceId")
                         .HasColumnType("nvarchar(450)");

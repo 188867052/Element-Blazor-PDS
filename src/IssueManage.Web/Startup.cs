@@ -24,7 +24,7 @@ namespace Admin.ServerRender
         {
             services.AddDbContext<DocsDbContext>(options =>
             {
-                options.UseSqlServer("server=119.45.37.57;database=Admin;uid=sa;pwd=Pass@Word1;");
+                options.UseSqlServer("server=119.45.37.57;database=hospital;uid=sa;pwd=Pass@Word1;");
             });
             services.AddScoped<DbContext, DocsDbContext>();
             services.AddAdmin<UserService>();
