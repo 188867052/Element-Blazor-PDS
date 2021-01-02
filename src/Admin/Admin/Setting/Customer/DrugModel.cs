@@ -10,7 +10,7 @@ namespace IssueManage.Pages.Setting.Customer
         [TableColumn(Text = "药品名称")]
         public string Name { get; set; }
 
-        [TableColumn(Text = "药品描述")]
+        [TableColumn(Text = "药品类型")]
         public string Description { get; set; }
 
         [TableColumn(Text = "数量")]
