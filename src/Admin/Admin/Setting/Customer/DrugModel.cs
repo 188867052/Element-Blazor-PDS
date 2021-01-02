@@ -19,6 +19,9 @@ namespace IssueManage.Pages.Setting.Customer
         [TableColumn(Text = "价格（￥）", Ignore = true)]
         public decimal Price { get; set; }
 
+        [TableColumn(Text = "价格（￥）")]
+        public string PriceString => Price.ToString();
+
         [TableColumn(Text = "创建时间")]
         public DateTime CreateTime { get; set; }
 
