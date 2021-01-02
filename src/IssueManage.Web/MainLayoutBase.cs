@@ -14,28 +14,14 @@ namespace Admin.ServerRender
             {
                 Label = "药品管理",
                 Icon = "el-icon-document",
-                Children = new List<MenuModel>()
-                {
-                    new MenuModel(){
-                         Label="药品列表",
-                         Icon="el-icon-s-promotion",
-                         Route="/issue"
-                    },
-                }
+                Route = "/drug"
             });
 
             Menus.Add(new MenuModel()
             {
                 Label = "科室管理",
-                Icon = "el-icon-document",
-                Children = new List<MenuModel>()
-                {
-                    new MenuModel(){
-                         Label="科室列表",
-                         Icon="el-icon-cpu",
-                         Route="/department"
-                    },
-                }
+                Icon = "el-icon-cpu",
+                Route = "/department"
             });
         }
     }

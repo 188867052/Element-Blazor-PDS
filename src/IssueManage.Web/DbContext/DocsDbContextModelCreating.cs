@@ -31,7 +31,7 @@ namespace Admin.ServerRender
                 });
             });
 
-            builder.Entity<Customer>(e =>
+            builder.Entity<Drug>(e =>
             {
                 e.HasKey(x => new
                 {

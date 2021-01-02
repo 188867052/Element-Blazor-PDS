@@ -4,16 +4,12 @@ using System.Threading.Tasks;
 using System.Linq;
 using IssueManage.Pages.Abstract;
 using Element;
-using IssueManage.Pages.Enums;
 
 namespace IssueManage.Pages.Setting.Customer
 {
     public class BCustomerManageBase : BAdminPageBase
     {
-        protected List<CustomerModel> Models { get; private set; } = new List<CustomerModel>();
-        internal bool CanCreate { get; private set; }
-        internal bool CanUpdate { get; private set; }
-        internal bool CanDelete { get; private set; }
+        protected List<DrugModel> Models { get; private set; } = new List<DrugModel>();
 
         [Inject]
         public ICustomerService CustomerService { get; set; }
@@ -23,14 +19,11 @@ namespace IssueManage.Pages.Setting.Customer
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            CanCreate = IsCanAccessAny(AdminResources.CreateUser.ToString());
-            CanUpdate = IsCanAccessAny(AdminResources.UpdateUser.ToString());
-            CanDelete = IsCanAccessAny(AdminResources.DeleteUser.ToString());
         }
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BCustomerEdit>("创建客户", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BCustomerEdit>("创建药品", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
@@ -38,12 +31,15 @@ namespace IssueManage.Pages.Setting.Customer
         {
             if (table == null) return;
 
-            Models = (await CustomerService.GetAll()).Select(o => new CustomerModel
+            Models = (await CustomerService.GetAll()).Select(o => new DrugModel
             {
                 Id = o.Id,
-                ContactPerson = o.ContactPersion,
+                Amount = o.Amount,
+                Price = o.Price,
                 Name = o.Name,
+                Description = o.Description,
                 CreateTime = o.CreateTime,
+                UpdateTime = o.UpdateTime,
             }).ToList();
             table.MarkAsRequireRender();
             RequireRender = true;
@@ -54,7 +50,7 @@ namespace IssueManage.Pages.Setting.Customer
         {
             var parameters = new Dictionary<string, object>();
             parameters.Add(nameof(BCustomerEdit.Model), user);
-            await DialogService.ShowDialogAsync<BCustomerEdit>("编辑客户", 800, parameters);
+            await DialogService.ShowDialogAsync<BCustomerEdit>("编辑药品", 800, parameters);
             await RefreshAsync();
         }
 
@@ -68,10 +64,10 @@ namespace IssueManage.Pages.Setting.Customer
 
         public async Task Delete(object model)
         {
-            var confirm = await ConfirmAsync("确认删除该客户？");
+            var confirm = await ConfirmAsync("确认删除？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await CustomerService.DeleteAsync(((CustomerModel)model).Id);
+            await CustomerService.DeleteAsync(((DrugModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }

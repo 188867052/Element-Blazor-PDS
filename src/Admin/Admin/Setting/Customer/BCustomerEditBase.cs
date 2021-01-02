@@ -9,7 +9,7 @@ namespace IssueManage.Pages.Setting.Customer
     {
         internal BForm form;
         [Parameter]
-        public CustomerModel Model { get; set; }
+        public DrugModel Model { get; set; }
 
         [Inject]
         public ICustomerService CustomerService { get; set; }
@@ -27,7 +27,7 @@ namespace IssueManage.Pages.Setting.Customer
         {
             if (!form.IsValid()) return;
 
-            Model = form.GetValue<CustomerModel>();
+            Model = form.GetValue<DrugModel>();
             if (isCreate)
             {
                 await CustomerService.AddAsync(Model);

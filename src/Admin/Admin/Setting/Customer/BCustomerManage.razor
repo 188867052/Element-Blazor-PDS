@@ -1,28 +1,16 @@
-﻿@page "/customer"
+﻿@page "/drug"
 @inherits BCustomerManageBase
-@attribute [Resource("customerList", "客户列表")]
+@attribute [Resource("customerList", "药品列表")]
 <BAuthorizeView Roles="@Roles">
-    @if (CanCreate)
-    {
-        <BButtonGroup>
-            <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建客户</BButton>
-        </BButtonGroup>
-    }
-    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(CustomerModel.Id)}" HasSelectionColumn="false">
+    <BButtonGroup>
+        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建药品</BButton>
+    </BButtonGroup>
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(DrugModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
-            @if (CanUpdate || CanDelete)
-            {
-                <BTableTemplateColumn Text="操作" Context="model">
-                    @if (CanUpdate)
-                    {
-                        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
-                    }
-                    @if (CanDelete)
-                    {
-                        <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
-                    }
-                </BTableTemplateColumn>
-            }
+            <BTableTemplateColumn Text="操作" Context="model">
+                <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
+                <BButton Type="@ButtonType.Danger" Size="@ButtonSize.Mini" OnClick="@(e => Delete(model))">删除</BButton>
+            </BTableTemplateColumn>
         </BTableColumns>
     </BTable>
 </BAuthorizeView>

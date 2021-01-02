@@ -18,14 +18,16 @@ namespace IssueManage.Services
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(CustomerModel model)
+        public async Task AddAsync(DrugModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
            
-            dbContext.Set<Customer>().Add(new Customer
+            dbContext.Set<Drug>().Add(new Drug
             {
                 Name = model.Name,
-                ContactPersion = model.ContactPerson,
+                Description = model.Description,
+                Price = model.Price,
+                Amount = model.Amount,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -36,24 +38,27 @@ namespace IssueManage.Services
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Customer>().Remove(dbContext.Set<Customer>().Find(id));
+            dbContext.Set<Drug>().Remove(dbContext.Set<Drug>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Customer>> GetAll()
+        public Task<List<Drug>> GetAll()
         {
-            return dbContext.Set<Customer>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Drug>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(CustomerModel model)
+        public async Task UpdateAsync(DrugModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Customer>().Find(model.Id);
+            var entity = dbContext.Set<Drug>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            entity.ContactPersion = model.ContactPerson;
-            dbContext.Set<Customer>().Update(entity);
+            entity.Price = model.Price;
+            entity.Description = model.Description;
+            entity.Amount = model.Amount;
+            entity.Price = model.Price;
+            dbContext.Set<Drug>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

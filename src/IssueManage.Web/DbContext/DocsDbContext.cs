@@ -9,8 +9,8 @@ namespace Admin.ServerRender
     {
         public DbSet<RoleResource> RoleResources { get; set; }
         public DbSet<Issue> Issues { get; set; }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Drug> Drugs { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Department> Meetings { get; set; }
+        public DbSet<Department> Departments { get; set; }
     }
 }
