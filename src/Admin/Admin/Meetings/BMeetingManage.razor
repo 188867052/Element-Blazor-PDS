@@ -8,7 +8,7 @@
             <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">添加科室</BButton>
         </BButtonGroup>
     }
-    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(MeetingModel.Id)}" HasSelectionColumn="false">
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(DepartmentModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
             @if (CanUpdate || CanDelete)
             {

@@ -18,14 +18,15 @@ namespace IssueManage.Services
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(MeetingModel model)
+        public async Task AddAsync(DepartmentModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
            
-            dbContext.Set<Meeting>().Add(new Meeting
+            dbContext.Set<Department>().Add(new Department
             {
-                Topic = model.Topic,
-                Content = model.Content,
+                Name = model.Name,
+                Remark = model.Remark,
+                Header = model.Header,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -36,24 +37,25 @@ namespace IssueManage.Services
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Meeting>().Remove(dbContext.Set<Meeting>().Find(id));
+            dbContext.Set<Department>().Remove(dbContext.Set<Department>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Meeting>> GetAll()
+        public Task<List<Department>> GetAll()
         {
-            return dbContext.Set<Meeting>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Department>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(MeetingModel model)
+        public async Task UpdateAsync(DepartmentModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Meeting>().Find(model.Id);
+            var entity = dbContext.Set<Department>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
-            entity.Topic = model.Topic;
-            entity.Content = model.Content;
-            dbContext.Set<Meeting>().Update(entity);
+            entity.Name = model.Name;
+            entity.Header = model.Header;
+            entity.Remark = model.Remark;
+            dbContext.Set<Department>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

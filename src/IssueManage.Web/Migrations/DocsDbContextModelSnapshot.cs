@@ -58,6 +58,33 @@ namespace IssueManage.Web.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("IssueManage.Pages.Entity.Department", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Header")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Meetings");
+                });
+
             modelBuilder.Entity("IssueManage.Pages.Entity.Issue", b =>
                 {
                     b.Property<int>("Id")
@@ -95,30 +122,6 @@ namespace IssueManage.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Issues");
-                });
-
-            modelBuilder.Entity("IssueManage.Pages.Entity.Meeting", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Topic")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Meetings");
                 });
 
             modelBuilder.Entity("IssueManage.Pages.Entity.Product", b =>

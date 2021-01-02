@@ -11,6 +11,6 @@ namespace Admin.ServerRender
         public DbSet<Issue> Issues { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<Department> Meetings { get; set; }
     }
 }

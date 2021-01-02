@@ -7,9 +7,9 @@ namespace IssueManage.Pages.Abstract
 {
     public interface IMeetingService
     {
-        Task AddAsync(MeetingModel model);
+        Task AddAsync(DepartmentModel model);
         Task DeleteAsync(int id);
-        Task UpdateAsync(MeetingModel model);
-        Task<List<Meeting>> GetAll();
+        Task UpdateAsync(DepartmentModel model);
+        Task<List<Department>> GetAll();
     }
 }

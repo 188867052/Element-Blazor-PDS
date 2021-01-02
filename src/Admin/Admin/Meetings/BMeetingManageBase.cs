@@ -10,7 +10,7 @@ namespace IssueManage.Pages.Meetings
 {
     public class BMeetingManageBase : BAdminPageBase
     {
-        protected List<MeetingModel> Models { get; private set; } = new List<MeetingModel>();
+        protected List<DepartmentModel> Models { get; private set; } = new List<DepartmentModel>();
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
@@ -38,11 +38,12 @@ namespace IssueManage.Pages.Meetings
         {
             if (table == null) return;
 
-            Models = (await MeetingService.GetAll()).Select(o => new MeetingModel
+            Models = (await MeetingService.GetAll()).Select(o => new DepartmentModel
             {
                 Id = o.Id,
-                Topic = o.Topic,
-                Content = o.Content,
+                Name = o.Name,
+                Header = o.Header,
+                Remark = o.Remark,
                 CreateTime = o.CreateTime,
                 UpdateTime = o.UpdateTime,
             }).ToList();
@@ -55,7 +56,7 @@ namespace IssueManage.Pages.Meetings
         {
             var parameters = new Dictionary<string, object>();
             parameters.Add(nameof(BMeetingEdit.Model), user);
-            await DialogService.ShowDialogAsync<BMeetingEdit>("编辑会议", 800, parameters);
+            await DialogService.ShowDialogAsync<BMeetingEdit>("编辑科室", 800, parameters);
             await RefreshAsync();
         }
 
@@ -69,10 +70,10 @@ namespace IssueManage.Pages.Meetings
 
         public async Task Delete(object model)
         {
-            var confirm = await ConfirmAsync("确认删除该客户？");
+            var confirm = await ConfirmAsync("确认删除该科室？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await MeetingService.DeleteAsync(((MeetingModel)model).Id);
+            await MeetingService.DeleteAsync(((DepartmentModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }

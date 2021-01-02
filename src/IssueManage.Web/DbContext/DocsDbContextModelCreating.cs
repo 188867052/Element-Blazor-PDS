@@ -47,7 +47,7 @@ namespace Admin.ServerRender
                 });
             });
 
-            builder.Entity<Meeting>(e =>
+            builder.Entity<Department>(e =>
             {
                 e.HasKey(x => new
                 {

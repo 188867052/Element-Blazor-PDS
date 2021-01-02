@@ -3,15 +3,18 @@ using System;
 
 namespace IssueManage.Pages.Meetings
 {
-    public class MeetingModel
+    public class DepartmentModel
     {
         public int Id { get; set; }
 
-        [TableColumn(Text = "议题")]
-        public string Topic { get; set; }
+        [TableColumn(Text = "科室名称")]
+        public string Name { get; set; }
 
-        [TableColumn(Text = "内容")]
-        public string Content { get; set; }
+        [TableColumn(Text = "主任")]
+        public string Header { get; set; }
+
+        [TableColumn(Text = "描述")]
+        public string Remark { get; set; }
 
         [TableColumn(Text = "创建时间")]
         public DateTime CreateTime { get; set; }

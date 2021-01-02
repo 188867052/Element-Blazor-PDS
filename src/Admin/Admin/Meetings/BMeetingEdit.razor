@@ -1,12 +1,15 @@
 ﻿@inherits BMeetingEditBase
 <BForm Value="Model" @ref="form" EnableAlwaysRender="true">
-    <BFormItem TValue="int" IsHidden="true" Name="@nameof(MeetingModel.Id)">
+    <BFormItem TValue="int" IsHidden="true" Name="@nameof(DepartmentModel.Id)">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="string" Label="议题" Name="@nameof(MeetingModel.Topic)" IsRequired="true">
+    <BFormItem TValue="string" Label="科室名称" Name="@nameof(DepartmentModel.Name)" IsRequired="true">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="string" Label="内容" Name="@nameof(MeetingModel.Content)">
+    <BFormItem TValue="string" Label="科室主任" Name="@nameof(DepartmentModel.Header)" IsRequired="true">
+        <BInput TValue="string"></BInput>
+    </BFormItem>
+    <BFormItem TValue="string" Label="描述" Name="@nameof(DepartmentModel.Remark)">
         <BInput TValue="string"></BInput>
     </BFormItem>
     <BFormActionItem Style="text-align:center">
