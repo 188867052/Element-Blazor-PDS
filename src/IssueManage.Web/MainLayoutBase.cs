@@ -12,29 +12,29 @@ namespace Admin.ServerRender
         {
             Menus.Add(new MenuModel()
             {
-                Label = "药品管理",
+                Label = "学生管理",
                 Icon = "el-icon-document",
-                Route = "/drug"
+                Route = "/student"
             });
 
             Menus.Add(new MenuModel()
             {
-                Label = "科室管理",
+                Label = "学分管理",
                 Icon = "el-icon-cpu",
-                Route = "/department"
+                Route = "/score"
             });
-            Menus.Add(new MenuModel()
-            {
-                Label = "医生管理",
-                Icon = "el-icon-cpu",
-                Route = "/department2"
-            });
-            Menus.Add(new MenuModel()
-            {
-                Label = "病人管理",
-                Icon = "el-icon-cpu",
-                Route = "/department3"
-            });
+            //Menus.Add(new MenuModel()
+            //{
+            //    Label = "医生管理",
+            //    Icon = "el-icon-cpu",
+            //    Route = "/department2"
+            //});
+            //Menus.Add(new MenuModel()
+            //{
+            //    Label = "病人管理",
+            //    Icon = "el-icon-cpu",
+            //    Route = "/department3"
+            //});
         }
     }
 }

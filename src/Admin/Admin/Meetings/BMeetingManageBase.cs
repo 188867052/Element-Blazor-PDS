@@ -10,7 +10,7 @@ namespace IssueManage.Pages.Meetings
 {
     public class BMeetingManageBase : BAdminPageBase
     {
-        protected List<DepartmentModel> Models { get; private set; } = new List<DepartmentModel>();
+        protected List<ScoreModel> Models { get; private set; } = new List<ScoreModel>();
         internal bool CanCreate { get; private set; }
         internal bool CanUpdate { get; private set; }
         internal bool CanDelete { get; private set; }
@@ -38,7 +38,7 @@ namespace IssueManage.Pages.Meetings
         {
             if (table == null) return;
 
-            Models = (await MeetingService.GetAll()).Select(o => new DepartmentModel
+            Models = (await MeetingService.GetAll()).Select(o => new ScoreModel
             {
                 Id = o.Id,
                 Name = o.Name,
@@ -73,7 +73,7 @@ namespace IssueManage.Pages.Meetings
             var confirm = await ConfirmAsync("确认删除该科室？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await MeetingService.DeleteAsync(((DepartmentModel)model).Id);
+            await MeetingService.DeleteAsync(((ScoreModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }

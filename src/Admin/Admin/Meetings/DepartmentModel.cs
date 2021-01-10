@@ -3,7 +3,7 @@ using System;
 
 namespace IssueManage.Pages.Meetings
 {
-    public class DepartmentModel
+    public class ScoreModel
     {
         public int Id { get; set; }
 

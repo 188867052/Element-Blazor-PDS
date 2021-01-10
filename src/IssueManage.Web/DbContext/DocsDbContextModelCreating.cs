@@ -59,7 +59,7 @@ namespace Admin.ServerRender
                 });
             });
 
-            builder.Entity<Department>(e =>
+            builder.Entity<Score>(e =>
             {
                 e.HasKey(x => new
                 {

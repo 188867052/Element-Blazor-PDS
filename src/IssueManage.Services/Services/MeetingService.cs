@@ -18,11 +18,11 @@ namespace IssueManage.Services
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(DepartmentModel model)
+        public async Task AddAsync(ScoreModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
            
-            dbContext.Set<Department>().Add(new Department
+            dbContext.Set<Score>().Add(new Score
             {
                 Name = model.Name,
                 Remark = model.Remark,
@@ -37,25 +37,25 @@ namespace IssueManage.Services
         public async Task DeleteAsync(int id)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            dbContext.Set<Department>().Remove(dbContext.Set<Department>().Find(id));
+            dbContext.Set<Score>().Remove(dbContext.Set<Score>().Find(id));
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }
 
-        public Task<List<Department>> GetAll()
+        public Task<List<Score>> GetAll()
         {
-            return dbContext.Set<Department>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Score>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(DepartmentModel model)
+        public async Task UpdateAsync(ScoreModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-            var entity = dbContext.Set<Department>().Find(model.Id);
+            var entity = dbContext.Set<Score>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
             entity.Header = model.Header;
             entity.Remark = model.Remark;
-            dbContext.Set<Department>().Update(entity);
+            dbContext.Set<Score>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
         }

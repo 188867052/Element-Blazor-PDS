@@ -2,7 +2,7 @@
 
 namespace IssueManage.Pages.Entity
 {
-    public class Department
+    public class Score
     {
         public int Id { get; set; }
         public string Name { get; set; }

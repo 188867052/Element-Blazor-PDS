@@ -9,7 +9,7 @@ namespace IssueManage.Pages.Meetings
     {
         internal BForm form;
         [Parameter]
-        public DepartmentModel Model { get; set; }
+        public ScoreModel Model { get; set; }
 
         [Inject]
         public IMeetingService MeetingService { get; set; }
@@ -27,7 +27,7 @@ namespace IssueManage.Pages.Meetings
         {
             if (!form.IsValid()) return;
 
-            Model = form.GetValue<DepartmentModel>();
+            Model = form.GetValue<ScoreModel>();
             if (isCreate)
             {
                 await MeetingService.AddAsync(Model);
