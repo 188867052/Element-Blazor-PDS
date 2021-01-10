@@ -1,7 +1,7 @@
 ﻿using Element;
 using System;
 
-namespace IssueManage.Pages.Meetings
+namespace IssueManage.Pages
 {
     public class ScoreModel
     {

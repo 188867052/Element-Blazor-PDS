@@ -5,8 +5,9 @@ using System.Linq;
 using IssueManage.Pages.Abstract;
 using Element;
 using IssueManage.Pages.Enums;
+using IssueManage.Pages.Scores;
 
-namespace IssueManage.Pages.Meetings
+namespace IssueManage.Pages
 {
     public class BScoreManageBase : BAdminPageBase
     {

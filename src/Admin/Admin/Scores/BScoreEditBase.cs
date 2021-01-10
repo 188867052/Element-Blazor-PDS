@@ -3,7 +3,7 @@ using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Meetings
+namespace IssueManage.Pages
 {
     public class BScoreEditBase : BAdminPageBase
     {
