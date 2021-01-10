@@ -23,7 +23,7 @@ namespace IssueManage.Pages.Setting.Customer
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BCustomerEdit>("创建药品", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BCustomerEdit>("创建学生信息", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
