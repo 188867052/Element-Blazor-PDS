@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace IssueManage.Pages.Abstract
 {
-    public interface ICustomerService
+    public interface IStudentService
     {
         Task AddAsync(StudentModel model);
         Task DeleteAsync(int id);

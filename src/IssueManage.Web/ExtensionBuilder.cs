@@ -23,7 +23,7 @@ namespace IssueManage.Web
             services.AddScoped<IProductService, ProductService>();
             services.AddTransient<IIssueService, IssueService>();
             services.AddTransient<IMeetingService, MeetingService>();
-            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IStudentService, CustomerService>();
             services.AddAdmin<DocsDbContext, IdentityUser>();
             return services;
         }

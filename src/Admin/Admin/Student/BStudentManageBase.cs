@@ -13,7 +13,7 @@ namespace IssueManage.Pages
         protected List<StudentModel> Models { get; private set; } = new List<StudentModel>();
 
         [Inject]
-        public ICustomerService CustomerService { get; set; }
+        public IStudentService CustomerService { get; set; }
 
         protected BTable table;
 

@@ -12,7 +12,7 @@ namespace IssueManage.Pages
         public StudentModel Model { get; set; }
 
         [Inject]
-        public ICustomerService CustomerService { get; set; }
+        public IStudentService StudentService { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }
@@ -30,11 +30,11 @@ namespace IssueManage.Pages
             Model = form.GetValue<StudentModel>();
             if (isCreate)
             {
-                await CustomerService.AddAsync(Model);
+                await StudentService.AddAsync(Model);
             }
             else
             {
-                await CustomerService.UpdateAsync(Model);
+                await StudentService.UpdateAsync(Model);
             }
             await DialogService.CloseDialogAsync(this, (object)null);
         }

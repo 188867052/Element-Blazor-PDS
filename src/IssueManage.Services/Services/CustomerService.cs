@@ -9,7 +9,7 @@ using System.Transactions;
 
 namespace IssueManage.Services
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : IStudentService
     {
         private readonly DbContext dbContext;
 
