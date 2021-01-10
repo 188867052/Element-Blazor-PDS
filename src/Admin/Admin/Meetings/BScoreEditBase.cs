@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace IssueManage.Pages.Meetings
 {
-    public class BMeetingEditBase : BAdminPageBase
+    public class BScoreEditBase : BAdminPageBase
     {
         internal BForm form;
         [Parameter]

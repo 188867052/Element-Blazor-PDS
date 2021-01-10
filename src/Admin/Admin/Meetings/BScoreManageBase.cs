@@ -8,7 +8,7 @@ using IssueManage.Pages.Enums;
 
 namespace IssueManage.Pages.Meetings
 {
-    public class BMeetingManageBase : BAdminPageBase
+    public class BScoreManageBase : BAdminPageBase
     {
         protected List<ScoreModel> Models { get; private set; } = new List<ScoreModel>();
         internal bool CanCreate { get; private set; }
@@ -30,7 +30,7 @@ namespace IssueManage.Pages.Meetings
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BMeetingEdit>("添加学分信息", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BScoreEdit>("添加学分信息", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
@@ -55,8 +55,8 @@ namespace IssueManage.Pages.Meetings
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BMeetingEdit.Model), user);
-            await DialogService.ShowDialogAsync<BMeetingEdit>("编辑科室", 800, parameters);
+            parameters.Add(nameof(BScoreEdit.Model), user);
+            await DialogService.ShowDialogAsync<BScoreEdit>("编辑科室", 800, parameters);
             await RefreshAsync();
         }
 
