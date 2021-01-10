@@ -9,11 +9,11 @@ using System.Transactions;
 
 namespace IssueManage.Services
 {
-    public class CustomerService : IStudentService
+    public class StudentService : IStudentService
     {
         private readonly DbContext dbContext;
 
-        public CustomerService(DbContext dbContext)
+        public StudentService(DbContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -53,10 +53,8 @@ namespace IssueManage.Services
             var entity = dbContext.Set<Student>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            //entity.Price = model.Price;
             entity.Sex = model.Sex;
             entity.Number = model.Number;
-            //entity.Price = model.Price;
             dbContext.Set<Student>().Update(entity);
             await dbContext.SaveChangesAsync();
             scope.Complete();
