@@ -10,6 +10,9 @@ namespace IssueManage.Pages
         [TableColumn(Text = "学生名称")]
         public string Name { get; set; }
 
+        [TableColumn(Ignore =true)]
+        public int StudentId { get; set; }
+
         [TableColumn(Text = "学分")]
         public int ScoreNumber { get; set; }
 

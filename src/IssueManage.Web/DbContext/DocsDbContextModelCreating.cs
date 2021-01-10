@@ -31,8 +31,8 @@ namespace Admin.ServerRender
                 });
 
                 e.HasOne(x => x.Department);
-            }); 
-            
+            });
+
             builder.Entity<DrugStock>(e =>
             {
                 e.HasKey(x => new
@@ -65,6 +65,7 @@ namespace Admin.ServerRender
                 {
                     x.Id,
                 });
+                e.HasOne(o => o.Student);
             });
         }
     }

@@ -21,10 +21,10 @@ namespace IssueManage.Services
         public async Task AddAsync(ScoreModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
-           
+
             dbContext.Set<Score>().Add(new Score
             {
-                Name = model.Name,
+                StudentId = model.StudentId,
                 Remark = model.Remark,
                 ScoreNumber = model.ScoreNumber,
                 CreateTime = DateTime.Now,
@@ -44,7 +44,7 @@ namespace IssueManage.Services
 
         public Task<List<Score>> GetAll()
         {
-            return dbContext.Set<Score>().AsNoTracking().ToListAsync();
+            return dbContext.Set<Score>().Include(o => o.Student).AsNoTracking().ToListAsync();
         }
 
         public async Task UpdateAsync(ScoreModel model)
@@ -52,7 +52,7 @@ namespace IssueManage.Services
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
             var entity = dbContext.Set<Score>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
-            entity.Name = model.Name;
+            entity.StudentId = model.StudentId;
             entity.ScoreNumber = model.ScoreNumber;
             entity.Remark = model.Remark;
             dbContext.Set<Score>().Update(entity);

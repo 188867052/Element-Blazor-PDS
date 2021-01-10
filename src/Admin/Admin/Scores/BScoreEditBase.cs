@@ -1,6 +1,7 @@
 ﻿using Element;
 using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace IssueManage.Pages
@@ -12,7 +13,10 @@ namespace IssueManage.Pages
         public ScoreModel Model { get; set; }
 
         [Inject]
-        public IScoreService MeetingService { get; set; }
+        public IScoreService ScoreService { get; set; }
+
+        [Inject]
+        public IStudentService StudentService { get; set; }
 
         [Parameter]
         public DialogOption Dialog { get; set; }
@@ -28,13 +32,21 @@ namespace IssueManage.Pages
             if (!form.IsValid()) return;
 
             Model = form.GetValue<ScoreModel>();
+
+            var student = (await StudentService.GetAll()).FirstOrDefault(o => o.Name == Model.Name);
+            if (student == null)
+            {
+                Toast($"学生{Model.Name}不存在!");
+                return;
+            }
+            Model.StudentId = student.Id;
             if (isCreate)
             {
-                await MeetingService.AddAsync(Model);
+                await ScoreService.AddAsync(Model);
             }
             else
             {
-                await MeetingService.UpdateAsync(Model);
+                await ScoreService.UpdateAsync(Model);
             }
             await DialogService.CloseDialogAsync(this, (object)null);
         }

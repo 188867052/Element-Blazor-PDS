@@ -17,7 +17,7 @@ namespace IssueManage.Pages
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public IScoreService MeetingService { get; set; }
+        public IScoreService ScoreService { get; set; }
 
         protected BTable table;
 
@@ -39,10 +39,10 @@ namespace IssueManage.Pages
         {
             if (table == null) return;
 
-            Models = (await MeetingService.GetAll()).Select(o => new ScoreModel
+            Models = (await ScoreService.GetAll()).Select(o => new ScoreModel
             {
                 Id = o.Id,
-                Name = o.Name,
+                Name = o.Student.Name,
                 ScoreNumber = o.ScoreNumber,
                 Remark = o.Remark,
                 CreateTime = o.CreateTime,
@@ -74,7 +74,7 @@ namespace IssueManage.Pages
             var confirm = await ConfirmAsync("确认删除该科室？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await MeetingService.DeleteAsync(((ScoreModel)model).Id);
+            await ScoreService.DeleteAsync(((ScoreModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }
