@@ -7,9 +7,9 @@ using Element;
 
 namespace IssueManage.Pages.Setting.Customer
 {
-    public class BCustomerManageBase : BAdminPageBase
+    public class BStudentManageBase : BAdminPageBase
     {
-        protected List<DrugModel> Models { get; private set; } = new List<DrugModel>();
+        protected List<StudentModel> Models { get; private set; } = new List<StudentModel>();
 
         [Inject]
         public ICustomerService CustomerService { get; set; }
@@ -31,7 +31,7 @@ namespace IssueManage.Pages.Setting.Customer
         {
             if (table == null) return;
 
-            Models = (await CustomerService.GetAll()).Select(o => new DrugModel
+            Models = (await CustomerService.GetAll()).Select(o => new StudentModel
             {
                 Id = o.Id,
                 Amount = o.Amount,
@@ -67,7 +67,7 @@ namespace IssueManage.Pages.Setting.Customer
             var confirm = await ConfirmAsync("确认删除？");
             if (confirm != MessageBoxResult.Ok) return;
 
-            await CustomerService.DeleteAsync(((DrugModel)model).Id);
+            await CustomerService.DeleteAsync(((StudentModel)model).Id);
             Toast("删除成功！");
             await RefreshAsync();
         }

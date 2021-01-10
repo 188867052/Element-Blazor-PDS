@@ -7,9 +7,9 @@ namespace IssueManage.Pages.Abstract
 {
     public interface ICustomerService
     {
-        Task AddAsync(DrugModel model);
+        Task AddAsync(StudentModel model);
         Task DeleteAsync(int id);
-        Task UpdateAsync(DrugModel model);
+        Task UpdateAsync(StudentModel model);
         Task<List<Drug>> GetAll();
     }
 }

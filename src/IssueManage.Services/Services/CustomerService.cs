@@ -18,7 +18,7 @@ namespace IssueManage.Services
             this.dbContext = dbContext;
         }
 
-        public async Task AddAsync(DrugModel model)
+        public async Task AddAsync(StudentModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
            
@@ -48,7 +48,7 @@ namespace IssueManage.Services
             return dbContext.Set<Drug>().AsNoTracking().ToListAsync();
         }
 
-        public async Task UpdateAsync(DrugModel model)
+        public async Task UpdateAsync(StudentModel model)
         {
             using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
             var entity = dbContext.Set<Drug>().Find(model.Id);

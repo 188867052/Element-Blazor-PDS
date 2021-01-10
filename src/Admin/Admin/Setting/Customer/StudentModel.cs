@@ -3,14 +3,14 @@ using System;
 
 namespace IssueManage.Pages.Setting.Customer
 {
-    public class DrugModel
+    public class StudentModel
     {
         public int Id { get; set; }
 
-        [TableColumn(Text = "药品名称")]
+        [TableColumn(Text = "学生名称")]
         public string Name { get; set; }
 
-        [TableColumn(Text = "药品类型")]
+        [TableColumn(Text = "类型")]
         public string DrugType { get; set; }
 
         [TableColumn(Text = "数量")]

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace IssueManage.Pages.Setting.Customer
 {
-    public class BCustomerEditBase : BAdminPageBase
+    public class BStudentEditBase : BAdminPageBase
     {
         internal BForm form;
         [Parameter]
-        public DrugModel Model { get; set; }
+        public StudentModel Model { get; set; }
 
         [Inject]
         public ICustomerService CustomerService { get; set; }
@@ -27,7 +27,7 @@ namespace IssueManage.Pages.Setting.Customer
         {
             if (!form.IsValid()) return;
 
-            Model = form.GetValue<DrugModel>();
+            Model = form.GetValue<StudentModel>();
             if (isCreate)
             {
                 await CustomerService.AddAsync(Model);

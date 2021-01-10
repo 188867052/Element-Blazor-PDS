@@ -1,18 +1,18 @@
-﻿@inherits BCustomerEditBase
+﻿@inherits BStudentEditBase
 <BForm Value="Model" @ref="form" EnableAlwaysRender="true">
-    <BFormItem TValue="int" IsHidden="true" Name="@nameof(DrugModel.Id)">
+    <BFormItem TValue="int" IsHidden="true" Name="@nameof(StudentModel.Id)">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="string" Label="药品名称" Name="@nameof(DrugModel.Name)" IsRequired="true">
+    <BFormItem TValue="string" Label="学生姓名" Name="@nameof(StudentModel.Name)" IsRequired="true">
         <BInput TValue="string"></BInput>
     </BFormItem> 
-    <BFormItem TValue="string" Label="药品类型" Name="@nameof(DrugModel.DrugType)" IsRequired="true">
+    <BFormItem TValue="string" Label="药品类型" Name="@nameof(StudentModel.DrugType)" IsRequired="true">
         <BInput TValue="string"></BInput>
     </BFormItem>
-    <BFormItem TValue="int" Label="数量" Name="@nameof(DrugModel.Amount)">
+    <BFormItem TValue="string" Label="数量" Name="@nameof(StudentModel.DrugType)">
         <BInput TValue="int"></BInput>
     </BFormItem>
-    <BFormItem TValue="decimal" Label="价格（￥）" Name="@nameof(DrugModel.Price)">
+    <BFormItem TValue="decimal" Label="价格（￥）" Name="@nameof(StudentModel.Price)">
         <BInput TValue="decimal"></BInput>
     </BFormItem>
     <BFormActionItem Style="text-align:center">

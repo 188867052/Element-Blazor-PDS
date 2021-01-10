@@ -1,11 +1,11 @@
-﻿@page "/drug"
-@inherits BCustomerManageBase
+﻿@page "/student"
+@inherits BStudentManageBase
 @attribute [Resource("customerList", "药品列表")]
 <BAuthorizeView Roles="@Roles">
     <BButtonGroup>
-        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建药品</BButton>
+        <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Small" OnClick="CreateAsync">创建学生信息</BButton>
     </BButtonGroup>
-    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(DrugModel.Id)}" HasSelectionColumn="false">
+    <BTable DataSource="Models" @ref="table" IgnoreProperties="new string[] { nameof(StudentModel.Id)}" HasSelectionColumn="false">
         <BTableColumns>
             <BTableTemplateColumn Text="操作" Context="model">
                 <BButton Type="@ButtonType.Primary" Size="@ButtonSize.Mini" OnClick="@(e => EditAsync(model))">编辑</BButton>
