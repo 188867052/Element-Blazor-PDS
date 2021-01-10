@@ -17,7 +17,7 @@ namespace IssueManage.Pages
         internal bool CanDelete { get; private set; }
 
         [Inject]
-        public IMeetingService MeetingService { get; set; }
+        public IScoreService MeetingService { get; set; }
 
         protected BTable table;
 
@@ -43,7 +43,7 @@ namespace IssueManage.Pages
             {
                 Id = o.Id,
                 Name = o.Name,
-                Header = o.Header,
+                ScoreNumber = o.ScoreNumber,
                 Remark = o.Remark,
                 CreateTime = o.CreateTime,
                 UpdateTime = o.UpdateTime,

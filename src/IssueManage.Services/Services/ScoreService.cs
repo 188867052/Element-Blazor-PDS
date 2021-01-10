@@ -9,11 +9,11 @@ using System.Transactions;
 
 namespace IssueManage.Services
 {
-    public class MeetingService : IMeetingService
+    public class ScoreService : IScoreService
     {
         private readonly DbContext dbContext;
 
-        public MeetingService(DbContext dbContext)
+        public ScoreService(DbContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -26,7 +26,7 @@ namespace IssueManage.Services
             {
                 Name = model.Name,
                 Remark = model.Remark,
-                Header = model.Header,
+                ScoreNumber = model.ScoreNumber,
                 CreateTime = DateTime.Now,
                 UpdateTime = DateTime.Now,
             });
@@ -53,7 +53,7 @@ namespace IssueManage.Services
             var entity = dbContext.Set<Score>().Find(model.Id);
             entity.UpdateTime = DateTime.Now;
             entity.Name = model.Name;
-            entity.Header = model.Header;
+            entity.ScoreNumber = model.ScoreNumber;
             entity.Remark = model.Remark;
             dbContext.Set<Score>().Update(entity);
             await dbContext.SaveChangesAsync();

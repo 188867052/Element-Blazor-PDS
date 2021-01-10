@@ -7,11 +7,11 @@ namespace IssueManage.Pages
     {
         public int Id { get; set; }
 
-        [TableColumn(Text = "科室名称")]
+        [TableColumn(Text = "学生名称")]
         public string Name { get; set; }
 
-        [TableColumn(Text = "主任")]
-        public string Header { get; set; }
+        [TableColumn(Text = "学分")]
+        public int ScoreNumber { get; set; }
 
         [TableColumn(Text = "描述")]
         public string Remark { get; set; }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace IssueManage.Pages.Abstract
 {
-    public interface IMeetingService
+    public interface IScoreService
     {
         Task AddAsync(ScoreModel model);
         Task DeleteAsync(int id);
