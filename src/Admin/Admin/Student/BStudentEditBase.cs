@@ -3,7 +3,7 @@ using IssueManage.Pages.Abstract;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace IssueManage.Pages.Setting.Customer
+namespace IssueManage.Pages
 {
     public class BStudentEditBase : BAdminPageBase
     {

@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 using System.Linq;
 using IssueManage.Pages.Abstract;
 using Element;
+using IssueManage.Pages.Student;
 
-namespace IssueManage.Pages.Setting.Customer
+namespace IssueManage.Pages
 {
     public class BStudentManageBase : BAdminPageBase
     {
@@ -23,7 +24,7 @@ namespace IssueManage.Pages.Setting.Customer
 
         public async Task CreateAsync()
         {
-            await DialogService.ShowDialogAsync<BCustomerEdit>("创建学生信息", 800, new Dictionary<string, object>());
+            await DialogService.ShowDialogAsync<BStudentEdit>("创建学生信息", 800, new Dictionary<string, object>());
             await RefreshAsync();
         }
 
@@ -49,8 +50,8 @@ namespace IssueManage.Pages.Setting.Customer
         public async Task EditAsync(object user)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add(nameof(BCustomerEdit.Model), user);
-            await DialogService.ShowDialogAsync<BCustomerEdit>("编辑药品", 800, parameters);
+            parameters.Add(nameof(BStudentEdit.Model), user);
+            await DialogService.ShowDialogAsync<BStudentEdit>("编辑药品", 800, parameters);
             await RefreshAsync();
         }
 

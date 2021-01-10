@@ -1,6 +1,6 @@
-﻿using IssueManage.Pages.Abstract;
+﻿using IssueManage.Pages;
+using IssueManage.Pages.Abstract;
 using IssueManage.Pages.Entity;
-using IssueManage.Pages.Setting.Customer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

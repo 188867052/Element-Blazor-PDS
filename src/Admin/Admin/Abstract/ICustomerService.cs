@@ -1,5 +1,4 @@
 ﻿using IssueManage.Pages.Entity;
-using IssueManage.Pages.Setting.Customer;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

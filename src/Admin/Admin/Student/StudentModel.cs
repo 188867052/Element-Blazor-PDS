@@ -1,7 +1,7 @@
 ﻿using Element;
 using System;
 
-namespace IssueManage.Pages.Setting.Customer
+namespace IssueManage.Pages
 {
     public class StudentModel
     {
