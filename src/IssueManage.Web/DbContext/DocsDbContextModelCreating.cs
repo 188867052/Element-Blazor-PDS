@@ -43,7 +43,7 @@ namespace Admin.ServerRender
                 e.HasOne(x => x.Drug);
             });
 
-            builder.Entity<Drug>(e =>
+            builder.Entity<Student>(e =>
             {
                 e.HasKey(x => new
                 {

@@ -9,6 +9,6 @@ namespace IssueManage.Pages.Abstract
         Task AddAsync(StudentModel model);
         Task DeleteAsync(int id);
         Task UpdateAsync(StudentModel model);
-        Task<List<Drug>> GetAll();
+        Task<List<Entity.Student>> GetAll();
     }
 }

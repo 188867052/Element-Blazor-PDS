@@ -9,7 +9,7 @@ namespace Admin.ServerRender
     {
         public DbSet<RoleResource> RoleResources { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Drug> Drugs { get; set; }
+        public DbSet<Student> Students { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<DrugStock> DrugStocks { get; set; }
         public DbSet<Score> Scores { get; set; }

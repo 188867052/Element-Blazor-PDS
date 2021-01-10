@@ -45,36 +45,6 @@ namespace IssueManage.Web.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("IssueManage.Pages.Entity.Drug", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DrugType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("UpdateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Drugs");
-                });
-
             modelBuilder.Entity("IssueManage.Pages.Entity.DrugStock", b =>
                 {
                     b.Property<int>("Id")
@@ -162,6 +132,36 @@ namespace IssueManage.Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Scores");
+                });
+
+            modelBuilder.Entity("IssueManage.Pages.Entity.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Sex")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -377,7 +377,7 @@ namespace IssueManage.Web.Migrations
 
             modelBuilder.Entity("IssueManage.Pages.Entity.DrugStock", b =>
                 {
-                    b.HasOne("IssueManage.Pages.Entity.Drug", "Drug")
+                    b.HasOne("IssueManage.Pages.Entity.Student", "Drug")
                         .WithMany()
                         .HasForeignKey("DrugId")
                         .OnDelete(DeleteBehavior.Cascade)

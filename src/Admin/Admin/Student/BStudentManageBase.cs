@@ -35,10 +35,10 @@ namespace IssueManage.Pages
             Models = (await CustomerService.GetAll()).Select(o => new StudentModel
             {
                 Id = o.Id,
-                Amount = o.Amount,
-                Price = o.Price,
+                Number = o.Number,
+                //Price = o.Price,
                 Name = o.Name,
-                DrugType = o.DrugType,
+                Sex = o.Sex,
                 CreateTime = o.CreateTime,
                 UpdateTime = o.UpdateTime,
             }).ToList();
